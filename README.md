@@ -6,3 +6,4 @@ Aslı Dinç               21802527
 Muhammet Abdullah Koç   21802832
 Berk BALTACI            21802067
 Murat Furkan Uğurlu     21802062
+Furkan Turunç           21802197
