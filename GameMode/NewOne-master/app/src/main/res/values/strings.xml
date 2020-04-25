@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">NewOne</string>
+    <string-array name="answers">
+        <item>-</item>
+        <item>A</item>
+        <item>B</item>
+        <item>E</item>
+        <item>EE</item>
+        <item>FF</item>
+        <item>SA</item>
+        <item>SB</item>
+        <item>T</item>
+    </string-array>
+      <string-array name="floors">
+          <item>-</item>
+          <item>-1</item>
+          <item>0</item>
+          <item>1</item>
+          <item>2</item>
+          <item>3</item>
+      </string-array>
+    <string-array name="cafe">
+        <item>CoffeeBreak</item>
+        <item>Fameo</item>
+        <item>Mozart</item>
+        <item>Speed</item>
+    </string-array>
+    <string-array name="amphi">
+        <item>Mithat Çoruh</item>
+        <item>C Blok </item>
+        <item>EE01</item>
+        <item>FFB22</item>
+    </string-array>
+    <string-array name="specific">
+        <item>DNA helix</item>
+    </string-array>
+
+</resources>
