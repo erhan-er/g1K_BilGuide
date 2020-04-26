@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "282284964617",
+    "firebase_url": "https://bilguide.firebaseio.com",
+    "project_id": "bilguide",
+    "storage_bucket": "bilguide.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282284964617:android:9717385809a15a253ff1d8",
+        "android_client_info": {
+          "package_name": "com.example.firstdesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282284964617-rr1abeo0u089ipdjn8h0nr63d9suf1vs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyE9IWUxZngMWq5jcY27b-5uKrao-AqPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282284964617-rr1abeo0u089ipdjn8h0nr63d9suf1vs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
