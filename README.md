@@ -25,6 +25,7 @@ _Include a concise description of your project here. Be sure to include the prop
 - [Berk BALTACI](group/berk_log.md)
 - [Recep UYSAL](group/recep_log.md)
 - [Murat Furkan UĞURLU](group/mfurkan_log.md)
+- [Aslı Dinç] (group/AsliDinc_log.md)
 
 ****
 **Instructor:** David Davenport  **TA:**  Shirin Pirouzkhah
