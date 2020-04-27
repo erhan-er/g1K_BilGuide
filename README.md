@@ -21,7 +21,7 @@ _Include a concise description of your project here. Be sure to include the prop
 #### Group Members
 - [Erhan ER](group/erhan_log.md)    
 - [Muhammet Abdullah KOÇ](group/abdullah_log.md)
-- Furkan Turunç (group/furkan_log.md)
+- [Furkan Turunç](group/furkan_log.md)
 - [Berk BALTACI](group/berk_log.md)
 - [Recep UYSAL](group/recep_log.md)
 
