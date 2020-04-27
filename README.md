@@ -23,7 +23,7 @@ _Include a concise description of your project here. Be sure to include the prop
 - [Muhammet Abdullah KOÇ](group/abdullah_log.md)
 - Furkan Turunç (group/furkan_log.md)
 - Berk Baltacı (group/berk_log.md)
-- member5
+- Recep Uysal (group/recep_log.md)
 
 ****
 **Instructor:** David Davenport  **TA:**  Shirin Pirouzkhah
