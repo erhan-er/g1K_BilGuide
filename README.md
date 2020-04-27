@@ -19,7 +19,7 @@ _Include a concise description of your project here. Be sure to include the prop
 
 [Group Meetings Log](group/meetingslog.md)
 #### Group Members
-- Erhan ER (group/erhan.md)    
+- Erhan ER (group/erhan_log.md)    
 - [member2](group/member2_log.md)
 - member3
 - member4
