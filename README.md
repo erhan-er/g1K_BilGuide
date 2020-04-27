@@ -21,7 +21,7 @@ _Include a concise description of your project here. Be sure to include the prop
 #### Group Members
 - Erhan ER (group/erhan_log.md)    
 - [member2](group/member2_log.md)
-- member3
+- Furkan Turunç (group/furkan_log.md)
 - member4
 - member5
 
