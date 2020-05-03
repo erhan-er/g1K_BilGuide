@@ -1,2 +1,2 @@
+rootProject.name='MapboxDeneme'
 include ':app'
-rootProject.name='BilguideInfoMode'
