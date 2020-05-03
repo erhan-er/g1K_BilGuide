@@ -3,24 +3,25 @@
 Below is a record of our project group meetings. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
 
 ****
-### Meeting ~ (date, duration)
+### Meeting ~ (23.03.2020, 3 hrs)
 ****
-**Present:** x, y, z...   _**Absent:**_  a, b.
+**Present:** Everyone
 
 **Discussion:** 
-We reviewed progress. Member1 & member2 reported back, explaining that they had discovered rst and demonstrated some useful examples. Member3 had slept and has not yet completed his task, but promised to do so this week! We decided we need to do this, that, and the other, and divided the work between us. Next meeting planned for (date).
+We reviewed progress. We decided the design of our android application, and prepared ui design stage document.
 
-**ToDo:** x & y will do this by ???, z & a will do that by ???, etc.
-
-****
-### Meeting ~ (date, duration)
-****
-This week I helped abc brainstorm ideas for...
+**ToDo:** Everyone will learn android programming with java until 2 weeks later.
 
 ****
-### Meeting ~ (date, duration)
+### Meeting ~ (13.04.2020, 90 mins)
 ****
-blah, blah, blah...
+This week we allocated our group into 3 sub-groups. 
+**ToDo:** We decided that Berk and Erhan will code entrance and main menu pages, Furkan, Murat Furkan and Recep will do game mode, Abdullah and Aslı will do information mode until 5 May.
+
+****
+### Meeting ~ (01.05.2020, 1 hr)
+****
+In this meeting we discussed our progress and showed what we did.
 
 ****
 ****
