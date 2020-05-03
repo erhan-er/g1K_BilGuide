@@ -3,7 +3,7 @@
 Below is a record of our project group meetings. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
 
 ****
-### Meeting ~ (23.03.2020, 3 hrs)
+### Meeting ~ (23.03.2020, 4 hrs)
 ****
 **Present:** Everyone
 
