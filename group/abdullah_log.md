@@ -12,12 +12,12 @@ This week I started to learn android studio via an online android studio course.
 This week I continued learning Android Studio and developiing an application. I learned basics for map services and APIs.
 
 ### ~ 13.04.2020 ~
-This week we did a group meeting and decided that Aslı and I will do information mode. We started to do something individually.
+This week we did a group meeting and decided that if we divide our group into three parts, we can be more focused to our works. Then, we concluded that Aslı and I will do information mode. We started to determine our needs for information mode and map services.
 
 ### ~ 20.04.2020 ~
-This week, we did a Zoom meeting and we prepared information mode building selection screen in 3 hours. Then, we tried to find the best map API for our needs.
+This week, we did a Zoom meeting and we prepared information mode building selection screen in 3 hours. Then, we tried to find the best map API for our needs. I started to search how to get the current location of user, how to put location mark to specific location, and how to navigate the user from location to the point. At first we decided to use Google Maps API because finding sources for Google is easier than other maps services and Google used in 3/4 of android applications. However, Google did not meet our needs because it does not provide navigation.
 
 ### ~ 27.04.2020 ~
-This week, Aslı and I continued serching for the best maps application, and we concluded that MapBox meets our needs. We did another Zoom meeting and we decided to learn MapBox coding until 29th April. Starting from 29th April, we did some applications of MapBox system during 3 days such as getting current location, directing routes from location to specific point etc. However, it was tiring because finding necessary resources for directing routes and navigation in MapBox was hard. Finally, we did completely working navigation activity in 4th May. We are able to get current location, direct routes from current location to specified point and navigate.
+This week, Aslı and I continued serching for the best maps application, and we concluded that MapBox meets our needs. We did another Zoom meeting and we decided to learn MapBox coding until 29th April. Starting from 29th April, I did some applications of MapBox system during 3 days such as getting current location, directing routes from location to specific point etc. However, it was tiring because finding necessary resources for directing routes and navigation in MapBox was hard. Finally, we did completely working navigation activity in 4th May. We are able to get current location, direct routes from current location to specified point and navigate.
 
 ****
