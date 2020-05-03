@@ -7,12 +7,12 @@ The information and code in this repository are submitted in partial fulfillment
 ### ~ optional group name ~
 
 ## Project Description
-_Include a concise description of your project here. Be sure to include the proposed users, the architecture (eg. desktop, web, mobile, embedded, etc.) & screenshots when available._
+BilGuide is an android based application that provides Bilkent University members to discover the campus via game. Also, this mobile application directs routes from the user's location to the specified building. It includes step to step navigation and leading the user vith voice.
    
 ## Project Status
-+ **Group/project Selection:** completed (date)
-+ **Requirements:** completed (date)
-+ **UI Design:** completed (date)
++ **Group/project Selection:** completed (13.02.2020)
++ **Requirements:** completed (07.03.2020)
++ **UI Design:** completed (23.03.2020)
 + **Detailed Design:** in progress
 + **Implementation:** not started!
 + **Reflections:** not yet!
