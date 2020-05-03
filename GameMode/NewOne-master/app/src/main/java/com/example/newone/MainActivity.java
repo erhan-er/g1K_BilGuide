@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Intent intent;
     private int index;
     private ArrayAdapter<CharSequence> adapter;
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         answerSelected = parent.getItemAtPosition(position).toString();
@@ -45,15 +46,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         questionList = new ArrayList<String>();
         questionList.add("Where is Law Faculty / BCC?");
-        questionList.add("Where is Faculty of Engineering");
-        questionList.add("Where is Economics Department");
-        questionList.add("Where is Faculty of Science");
+        questionList.add("Where is Faculty of   Engineering?");
+        questionList.add("Where is Economics Department?");
+        questionList.add("Where is Faculty of Science?");
+        questionList.add("Where is Faculty of Art, Design and Architecture?");
+
         //arrayList.add("Where is Trade Master?");
         questionText = findViewById(R.id.questionText);
-        index = ((int)(4*Math.random()));
+        index = ((int)(questionList.size()*Math.random()));
         questionText.setText(questionList.get(index));
         spinner = findViewById(R.id.spinner);
-        buttonGo = findViewById(R.id.buttonGo);
+        buttonGo = findViewById(R.id.buttonGo2);
         buttonGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,9 +91,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         else if (index == 3 && answerSelected.equals("SA")) {
             return true;
         }
-        //else if (index == 4 && text.equals("A")) {
-            //return true;
-        //}
+        else if (index == 4 && answerSelected.equals("FF")) {
+            return true;
+        }
         else if(answerSelected.equals("-"))
             return true;
         else
