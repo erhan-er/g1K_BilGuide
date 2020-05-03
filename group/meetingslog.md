@@ -16,6 +16,7 @@ We reviewed progress. We decided the design of our android application, and prep
 ### Meeting ~ (13.04.2020, 90 mins)
 ****
 This week we allocated our group into 3 sub-groups. 
+
 **ToDo:** We decided that Berk and Erhan will code entrance and main menu pages, Furkan, Murat Furkan and Recep will do game mode, Abdullah and Aslı will do information mode until 5 May.
 
 ****
