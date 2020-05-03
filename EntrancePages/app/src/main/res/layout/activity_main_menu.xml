@@ -7,38 +7,39 @@
     tools:context=".MainMenu">
 
     <Button
-        android:id="@+id/eventbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="184dp"
-        android:text="Event Mode"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
-        app:layout_constraintVertical_bias="0.18" />
-
-    <Button
-        android:id="@+id/gameModebtn"
-        android:layout_width="200dp"
+        android:id="@+id/gameModeButton"
+        android:layout_width="256dp"
         android:layout_height="64dp"
         android:text="Game Mode"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.467" />
 
     <Button
-        android:id="@+id/infobtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="260dp"
+        android:id="@+id/informationModeButton"
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
         android:text="Information Mode"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintTop_toBottomOf="@+id/gameModeButton"
+        app:layout_constraintVertical_bias="0.129" />
 
+    <Button
+        android:id="@+id/eventModeButton"
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:text="Event Mode"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/informationModeButton"
+        app:layout_constraintVertical_bias="0.29" />
 </androidx.constraintlayout.widget.ConstraintLayout>
