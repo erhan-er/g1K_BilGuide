@@ -21,5 +21,5 @@ This week I met with my group members and we decided to divide the group into 3 
 This week I met with Murat Furkan Uğurlu and Furkan Turunç. We started to design the Game Mode and we finished all of the parts which do not require GPS. We also decided that we should learn how to use GPS in android.  
 
 ### ~ 03.05.2020 ~
-This week I met with my all group members and we decided to use MapBox in our project. I learned how to use MapBox in android studio. I also met with my subgroup members ( Murat Furkan Uğurlu and Furkan Turunç ) to complete the GPS part. We almost finished the Game Mode with finishing the GPS part. Only a few changes will be enough to completely finish the Game Mode.
+This week I met with my all group members and we decided to use MapBox in our project. I learned how to use MapBox in android studio. I also met with my subgroup members ( Murat Furkan Uğurlu and Furkan Turunç ) to complete the GPS part. With the completion of the GPS part, we almost finished the Game Mode. Only a few changes will be enough to completely finish the Game Mode.
 ****
