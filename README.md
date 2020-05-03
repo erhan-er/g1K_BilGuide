@@ -7,7 +7,7 @@ The information and code in this repository are submitted in partial fulfillment
 ### ~ optional group name ~
 
 ## Project Description
-BilGuide is an android based application that provides Bilkent University members to discover the campus via game. Also, this mobile application directs routes from the user's location to the specified building. It includes step to step navigation and leading the user vith voice.
+BilGuide is an android based application that provides Bilkent University members to discover the campus via game. Also, this mobile application directs routes from the user's location to the specified building. It includes step to step navigation and leading the user with voice.
    
 ## Project Status
 + **Group/project Selection:** completed (13.02.2020)
