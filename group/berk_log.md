@@ -5,13 +5,12 @@
 
 On this page I will keep a weekly record of what I have done for the CS102 group project. This page will be submitted together with the rest of the repository, in partial fulfillment of the CS102 course requirements.
 
-### ~ date ~
+### ~ 06.04.2020 ~
 
-This week I learn xyz and worked out..
+This week I learn the basics of Android Studio and learn different applications of android studio. 
+### ~ 13.04.2020 ~
 
-### ~ date ~
-This week I helped abc brainstorm ideas for..
+This week we did a group meeting and decided that Erhan and I will do log in, signup, sign in, main menu screens.We started focus on this part of android studio
+### ~ 24.04.2020 ~
 
-### ~ date ~
-
-blah, blah, blah..
+This week erhan and I make a metting at zoom and we tried to make our parts. We encounter some difficulties because android studio is a new for us. Therefore, we have to solve this issues and also there are some problems occurs because of we tried to write all codes online.
