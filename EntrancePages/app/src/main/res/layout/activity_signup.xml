@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.122"
+        app:layout_constraintVertical_bias="0.033"
         app:srcCompat="@drawable/add_profile" />
 
     <EditText
@@ -50,7 +50,7 @@
         android:layout_width="256dp"
         android:layout_height="49dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Password - min 6 character"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,12 +63,23 @@
         android:id="@+id/SignUpButton2"
         android:layout_width="128dp"
         android:layout_height="64dp"
-        android:text="Sign Up"
+        android:text="SIGN UP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userPassword"
         app:layout_constraintVertical_bias="0.24000001" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignUpButton2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
