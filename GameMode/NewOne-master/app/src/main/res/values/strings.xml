@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">NewOne</string>
+    <string name="navigation_guidance_day">mapbox://styles/mapbox/navigation-guidance-day-v4</string>
+    <string name="access_token" translatable = "false">pk.eyJ1IjoiY3MxMDJiaWxndWlkZSIsImEiOiJjazlra2ZweXcwY3plM2Vuc2lkamF1bXV3In0.VCbskj3Lj51vrcMuGkQyVA</string>
+    <string name="discover_the_building">discover the building</string>
     <string-array name="answers">
         <item>-</item>
         <item>A</item>
@@ -24,6 +27,18 @@
         <item>Fameo</item>
         <item>Mozart</item>
         <item>Speed</item>
+    </string-array>
+    <string-array name="departmentsOfSA">
+        <item>Mathematics</item>
+        <item>Physics</item>
+        <item>Molecular Biology and Genetic</item>
+        <item>Chemistry</item>
+    </string-array>
+    <string-array name="departmentsOfA">
+        <item>Management</item>
+        <item>International Relations</item>
+        <item>Philosophy</item>
+        <item>Archeology</item>
     </string-array>
     <string-array name="amphi">
         <item>Mithat Çoruh</item>

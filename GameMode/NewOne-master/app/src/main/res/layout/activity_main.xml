@@ -9,7 +9,7 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="228dp"
+        android:layout_width="300dp"
         android:layout_height="33dp"
         android:layout_marginBottom="172dp"
         android:background="#CDE2E3"
@@ -49,9 +49,9 @@
         app:layout_constraintVertical_bias="0.345" />
 
     <Button
-        android:id="@+id/buttonGo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/buttonGo2"
+        android:layout_width="168dp"
+        android:layout_height="51dp"
         android:layout_marginBottom="70dp"
         android:background="#CDE2E3"
         android:text="Go"
