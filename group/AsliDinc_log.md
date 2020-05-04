@@ -18,6 +18,6 @@ This week we divided into 3 groups as signing up/in part, game part and informat
 This week we created a simple select building interface and tried to use Google Maps and Directions API in our navigation activity. We could handle with tracking the user's current location on Google maps and drawing a route to the selected building. However, we realised that it is not quite possible for us to provide navigation with Google's API and we started to search for another open source maps SDK. We met with Mapbox which provide developers the services that we exactly need for our application. 
 
 ### ~ 27.04.2020 ~
-This week we completed our map activity by using Mapbox SDK. We linked the select building screen to the map navigation screen and successfully pass data from one activity to another. I am now trying to learn how to create an aesthetic and user friendly user interface with Adobe Xd in order to make our application pleasing to the eye.
+This week we completed our map activity by using Mapbox SDK. We linked the select building screen to the map navigation screen and successfully pass data from one activity to another. I am now trying to learn how to create an aesthetic and user friendly user interface with Adobe Xd in order to make our application also pleasing to the eye.
 
 ****
