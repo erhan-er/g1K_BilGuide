@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/backgroundgreen"
     android:layout_height="match_parent"
     tools:context="com.wingsquare.mapboxdeneme.SelectBuilding">
 
@@ -37,40 +36,40 @@
         android:id="@+id/spinnerBuilding"
         android:layout_width="250dp"
         android:layout_height="45dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="@color/colorblue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textWhere" />
 
     <Button
         android:id="@+id/buttonGo"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_marginStart="106dp"
-        android:layout_marginTop="120dp"
         android:layout_marginEnd="106dp"
+        android:layout_marginBottom="184dp"
+        android:background="@drawable/button_shape"
         android:text="GO!"
-        android:textColor="@color/colorgreen"
+        android:textColor="@color/colorblue"
         android:textSize="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerBuilding" />
-
-    <Button
-        android:id="@+id/buttonMainMenu"
-        style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginBottom="77dp"
-        android:text="MAIN MENU"
-        android:textColor="@color/colorgreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonGo" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonMainMenu"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="77dp"
+        android:background="@drawable/button_shape"
+        android:text="MAIN MENU"
+        android:textColor="@color/colorblue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

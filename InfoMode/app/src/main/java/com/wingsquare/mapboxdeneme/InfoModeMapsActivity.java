@@ -52,38 +52,54 @@ import android.view.View;
 import android.widget.Button;
 import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher;
 
+/**
+ * InfoModeMapsActivity, which draws route from location to given info, and start navigation button
+ * @author Abdullah, Aslı
+ * @version 1.0
+ */
 
 public class InfoModeMapsActivity extends AppCompatActivity implements OnMapReadyCallback, PermissionsListener {
-    // variables for adding location layer
+
+    // variables
+
+    // adding location layer
     private MapView mapView;
     private MapboxMap mapboxMap;
-    // variables for adding location layer
+    // getting location
     private PermissionsManager permissionsManager;
     private LocationComponent locationComponent;
-    // variables for calculating and drawing a route
+    // routes
     private DirectionsRoute currentRoute;
     private static final String TAG = "DirectionsActivity";
     private NavigationMapRoute navigationMapRoute;
-    // variables needed to initialize navigation
+    // buttons
     private Button buttonStartNav;
     private Button buttonBackMap;
     private Button buttonMainMenuMap;
-
+    // latitude and longitude info
     private String fromSelectLat;
     private String fromSelectLng;
 
+
+    // methods
+
+    // default method for android apps
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Mapbox.getInstance(this, getString(R.string.access_token));
+        Mapbox.getInstance(this, getString(R.string.access_token));     //api key for maps
         setContentView(R.layout.activity_infomodemaps);
+
+        // defining mapview and getting map
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
+        // defining buttons
         buttonBackMap = findViewById(R.id.buttonBackMap);
         buttonMainMenuMap = findViewById(R.id.buttonMainMenuMap);
 
+        // listener for back button
         buttonBackMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,22 +108,31 @@ public class InfoModeMapsActivity extends AppCompatActivity implements OnMapRead
             }
         });
 
-
+        //getting info from SelectBuilding class
         Intent intent = getIntent();
         fromSelectLat = intent.getStringExtra("lat");
         fromSelectLng = intent.getStringExtra("lng");
     }
 
 
+    /**
+     * isLocationEnabled method, returns true if location is enabled
+     * @param context
+     * @return  boolean
+     */
     private boolean isLocationEnabled(Context context) {
         LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return LocationManagerCompat.isLocationEnabled(locationManager);
     }
 
-
+    /**
+     * onMapReady method that makes map ready
+     * @param mapboxMap
+     */
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
 
+        // if location is disabled, user is directed to location settings to open location.
         if( isLocationEnabled(this) == false ){
             Toast.makeText(InfoModeMapsActivity.this, "You need to enable GPS before continue.", Toast.LENGTH_LONG).show();
             startActivity( new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS) );
@@ -115,13 +140,16 @@ public class InfoModeMapsActivity extends AppCompatActivity implements OnMapRead
         }
         else{
             this.mapboxMap = mapboxMap;
-            mapboxMap.setStyle(getString(R.string.mapbox_style_satellite_streets), new Style.OnStyleLoaded() {
+
+            //setting style for map
+            mapboxMap.setStyle(getString(R.string.mapbox_style_satellite_streets), new Style.OnStyleLoaded() {      // street style
                 @Override
                 public void onStyleLoaded(@NonNull Style style) {
-                    enableLocationComponent(style);
 
+                    enableLocationComponent(style);
                     addDestinationIconSymbolLayer(style);
 
+                    // determining start(location) point and end point
                     Point destinationPoint = Point.fromLngLat(Double.parseDouble(fromSelectLng), Double.parseDouble(fromSelectLat));
                     Point originPoint = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(), locationComponent.getLastKnownLocation().getLatitude());
 
@@ -130,15 +158,16 @@ public class InfoModeMapsActivity extends AppCompatActivity implements OnMapRead
                         source.setGeoJson(Feature.fromGeometry(destinationPoint));
                     }
 
-                    getRoute(originPoint, destinationPoint);
+                    getRoute(originPoint, destinationPoint);      // calling getRoute method
 
+                    // defining start navigation button and button click listener
                     buttonStartNav = findViewById(R.id.buttonStartNav);
                     buttonStartNav.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+
                             NavigationLauncherOptions navLauncherOptions = NavigationLauncherOptions.builder().directionsRoute(currentRoute).build();
-                            // Call this method with Context from within an Activity
-                            NavigationLauncher.startNavigation(InfoModeMapsActivity.this, navLauncherOptions);
+                            NavigationLauncher.startNavigation(InfoModeMapsActivity.this, navLauncherOptions);      // starting navigation activity
                         }
                     });
                 }
@@ -147,6 +176,10 @@ public class InfoModeMapsActivity extends AppCompatActivity implements OnMapRead
 
     }
 
+    /**
+     * adding icon to the selected point method
+     * @param loadedMapStyle
+     */
     private void addDestinationIconSymbolLayer(@NonNull Style loadedMapStyle) {
         loadedMapStyle.addImage("destination-icon-id", BitmapFactory.decodeResource(this.getResources(), R.drawable.mapbox_marker_icon_default));
         GeoJsonSource geoJsonSource = new GeoJsonSource("destination-source-id");
@@ -157,19 +190,26 @@ public class InfoModeMapsActivity extends AppCompatActivity implements OnMapRead
         loadedMapStyle.addLayer(destinationSymbolLayer);
     }
 
-
-
+    /**
+     * getting route from origin to destination method
+     * @param origin
+     * @param destination
+     */
     private void getRoute(Point origin, Point destination) {
-        NavigationRoute.builder(this).accessToken(Mapbox.getAccessToken()).origin(origin).destination(destination).profile(DirectionsCriteria.PROFILE_WALKING).build().getRoute(new Callback<DirectionsResponse>() {
+        NavigationRoute.builder(this).accessToken(Mapbox.getAccessToken()).origin(origin).destination(destination)
+                .profile(DirectionsCriteria.PROFILE_WALKING).build().getRoute(new Callback<DirectionsResponse>() {      // walking routes
                     @Override
                     public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
+
+                        // if there are no routes, it returns anything so route cannot be gotten.
                         if (response.body() == null) {
                             return;
                         } else if (response.body().routes().size() < 1) {
                             return;
                         }
                         currentRoute = response.body().routes().get(0);
-                        // Draw the route on the map
+
+                        // drawnig the route on map
                         if (navigationMapRoute != null) {
                             navigationMapRoute.removeRoute();
                         } else {
@@ -178,6 +218,7 @@ public class InfoModeMapsActivity extends AppCompatActivity implements OnMapRead
                         navigationMapRoute.addRoute(currentRoute);
                     }
 
+                    // inner method for failure
                     @Override
                     public void onFailure(Call<DirectionsResponse> call, Throwable throwable) {
                         Log.e(TAG, "Error: " + throwable.getMessage());
@@ -185,18 +226,24 @@ public class InfoModeMapsActivity extends AppCompatActivity implements OnMapRead
                 });
     }
 
+    /**
+     * this method puts location mark if the user enabled location.
+     * @param loadedMapStyle
+     */
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
-        // Check if permissions are enabled and if not request
+        // checking whether location is enabled or not
         if (PermissionsManager.areLocationPermissionsGranted(this)) {
-            // Activate the MapboxMap LocationComponent to show user location
-            // Adding in LocationComponentOptions is also an optional parameter
+
+            // activating Mapbox component
             locationComponent = mapboxMap.getLocationComponent();
             locationComponent.activateLocationComponent(this, loadedMapStyle);
             locationComponent.setLocationComponentEnabled(true);
-            // Set the component's camera mode
+
+            // setting camera mode
             locationComponent.setCameraMode(CameraMode.TRACKING);
-        } else {
+        }
+        else {
             permissionsManager = new PermissionsManager(this);
             permissionsManager.requestLocationPermissions(this);
         }
@@ -207,11 +254,13 @@ public class InfoModeMapsActivity extends AppCompatActivity implements OnMapRead
         permissionsManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
+    // if location is disabled, this toast message will appear.
     @Override
     public void onExplanationNeeded(List<String> permissionsToExplain) {
         Toast.makeText(this, R.string.user_location_permission_explanation, Toast.LENGTH_LONG).show();
     }
 
+    // enabling location component according to enableLocationComponent method.
     @Override
     public void onPermissionResult(boolean granted) {
         if (granted) {
@@ -221,6 +270,11 @@ public class InfoModeMapsActivity extends AppCompatActivity implements OnMapRead
             finish();
         }
     }
+
+
+    /**
+     * some necessary methods for Mapbox to work.
+     */
 
     @Override
     protected void onStart() {
