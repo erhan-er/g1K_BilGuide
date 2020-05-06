@@ -72,8 +72,12 @@ public class SelectBuilding extends AppCompatActivity{
         buildings.add(SA);
         Building SB = new Building("SB Building",39.868267, 32.748433);
         buildings.add(SB);
+        Building U = new Building("U Building", 39.872456, 32.750488);
+        buildings.add(U);
         Building V = new Building("V Building", 39.867108, 32.750333);
         buildings.add(V);
+        Building Odeon = new Building("ODEON", 39.876108, 32.752595);
+        buildings.add(Odeon);
         Building SportCenter = new Building("Sport Center",39.866703, 32.748777);
         buildings.add(SportCenter);
         Building SpeedKirac = new Building("Speed/Kirac Cafe",39.866210, 32.748600);
@@ -84,6 +88,8 @@ public class SelectBuilding extends AppCompatActivity{
         buildings.add(CoffeeBreak);
         Building Library = new Building("Library",39.870280, 32.749838);
         buildings.add(Library);
+        Building Dorm_76 = new Building("Dormitory 76", 39.864646, 32.747480);
+        buildings.add(Dorm_76);
         Building Dorm_77 = new Building("Dormitory 77", 39.864424, 32.746670);
         buildings.add(Dorm_77);
         Building Dorm_78 = new Building("Dormitory 78", 39.865075, 32.746332);
