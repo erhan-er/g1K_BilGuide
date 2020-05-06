@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">BilGuide</string>
-    <string name="description">BilGuide is an application that helps you to discover Bilkent University and get routes.
-                        In the main menu, you will see two modes. Game mode provides you to discover the main campus, and earn
-                        BilCoins! Information mode helps you to go wherever you want inside the campus. Just log in and enjoy!</string>
-</resources>
