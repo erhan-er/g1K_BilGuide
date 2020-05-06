@@ -13,10 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity4"></activity>
-        <activity android:name=".Activity3" />
-        <activity android:name=".Activity2" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".GameModeBalance"></activity>
+        <activity android:name=".GameModeDiscovery" />
+        <activity android:name=".GameModeMap" />
+        <activity android:name=".GameModeMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
