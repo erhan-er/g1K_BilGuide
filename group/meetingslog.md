@@ -29,7 +29,7 @@ This week we allocated our group into 3 sub-groups.
 In this meeting we discussed our progress and showed what we did.
 
 ****
-### Meeting ~ (06.05.2020, 2 hr)
+### Meeting ~ (06.05.2020, 2 hrs)
 ****
 **Present:** Everyone
 
