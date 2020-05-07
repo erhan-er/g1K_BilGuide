@@ -57,13 +57,13 @@ public class GameModeBalance extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 UserProfile user = dataSnapshot.getValue( UserProfile.class );
                 assert user != null;
-                int foo = user.getBilcoin();
-                textView3.setText( "New Balance: " + ( foo + balance ));
+                int foo = user.getBilcoin() + balance;
+                textView3.setText( "New Balance: " + foo );
 
                 buttonMainMenu.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        dataSnapshot.getRef().child("bilcoin").setValue( user.getBilcoin() + balance );
+                        dataSnapshot.getRef().child("bilcoin").setValue( foo );
                         finish();
                         startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
                     }
