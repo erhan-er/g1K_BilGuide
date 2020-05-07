@@ -10,7 +10,6 @@ public class UserProfile {
 
     // constructors
     public UserProfile() {
-
     }
 
     public UserProfile(String userName, String userEmail) {

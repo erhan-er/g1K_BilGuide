@@ -32,7 +32,7 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_mode_discovery);
         wrongTry = 0;
-        bilCoin = 20;
+        bilCoin = 0;
         buttonGo = findViewById(R.id.buttonGo2);
         spinner = findViewById(R.id.spinner);
         questionText = findViewById(R.id.questionText);

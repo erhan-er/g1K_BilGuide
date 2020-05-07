@@ -50,7 +50,7 @@ public class BilcoinActivity extends AppCompatActivity {
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                final UserProfile user = dataSnapshot.getValue( UserProfile.class );
+                UserProfile user = dataSnapshot.getValue( UserProfile.class );
                 plus.setOnClickListener(new View.OnClickListener() {
                     @SuppressLint("SetTextI18n")
                     @Override
