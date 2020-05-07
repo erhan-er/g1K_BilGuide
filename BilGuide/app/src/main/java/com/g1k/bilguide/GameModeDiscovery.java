@@ -105,7 +105,7 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
             }
         });
         adapter = new ArrayAdapter<String>(getApplicationContext()
-                , R.layout.spinneritem
+                , R.layout.forspinner
                 , android.R.id.text1
                 , answerList);
         spinner.setAdapter(adapter);

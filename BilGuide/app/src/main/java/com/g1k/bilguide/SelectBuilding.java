@@ -114,6 +114,7 @@ public class SelectBuilding extends AppCompatActivity{
                         goToMap.putExtra("lat", ((Building) spinnerBuilding.getItemAtPosition(i)).getLatitude() + "");
                         goToMap.putExtra("lng", ((Building) spinnerBuilding.getItemAtPosition(i)).getLongitude() + "");
                         startActivity(goToMap);
+                        finish();
                     }
                 }
             }

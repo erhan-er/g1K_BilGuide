@@ -283,8 +283,8 @@ public class GameModeMap extends AppCompatActivity implements OnMapReadyCallback
     }
     public void onBackPressed(){
 
-     //   Intent intent = new Intent(GameModeMap.this, GameModeMain.class);
-     //   startActivity(intent);
+        Intent intent = new Intent(GameModeMap.this, MainMenuActivity.class);
+        startActivity(intent);
     }
 
     @Override

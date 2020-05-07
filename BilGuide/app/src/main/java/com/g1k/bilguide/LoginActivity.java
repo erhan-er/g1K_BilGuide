@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                     checkEmailVerification();
                 }
                 else {
-                    Toast.makeText(LoginActivity.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Wrong e-mail or password", Toast.LENGTH_SHORT).show();
                     enters--;
                     dialog.dismiss();
                     if ( enters == 0 )

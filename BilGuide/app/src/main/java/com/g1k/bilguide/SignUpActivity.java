@@ -145,7 +145,7 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if ( task.isSuccessful() ) {
-                        Toast.makeText(SignUpActivity.this, "Registration Successful. Please confirm your email address.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUpActivity.this, "Registration Successful. Please confirm your e-mail address.", Toast.LENGTH_SHORT).show();
                         mAuth.signOut(); // signs out the user from the application to prevent unauthorized enters
                         startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                     }

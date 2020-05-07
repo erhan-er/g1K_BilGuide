@@ -79,7 +79,7 @@ public class GameModeMain extends AppCompatActivity implements AdapterView.OnIte
             }
         });
         adapter = new ArrayAdapter<String>(getApplicationContext()
-                , R.layout.spinneritem
+                , R.layout.forspinner
                 , android.R.id.text1
                 , answerList);
         spinner.setAdapter(adapter);

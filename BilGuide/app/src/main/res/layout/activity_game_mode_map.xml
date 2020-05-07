@@ -29,8 +29,9 @@
         android:layout_width="411dp"
         android:layout_height="54dp"
         android:background="@drawable/button_shape"
-        android:textColor="@color/colorblue"
+        android:backgroundTint="@color/colorAccent"
         android:text="@string/discover_the_building"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -38,15 +39,16 @@
 
     <Button
         android:id="@+id/checkArrival"
-        android:layout_width="413dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="1dp"
-        android:text="Check Arrival"
+        android:layout_width="321dp"
+        android:layout_height="46dp"
         android:background="@drawable/button_shape"
-        android:textColor="@color/colorblue"
+        android:backgroundTint="@color/colorblue"
+        android:text="Check Arrival"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toTopOf="@+id/buttonGo2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/mapView"
         app:layout_constraintStart_toStartOf="parent" />
 
 
