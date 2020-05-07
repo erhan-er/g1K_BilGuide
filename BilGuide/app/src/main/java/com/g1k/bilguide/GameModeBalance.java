@@ -43,11 +43,14 @@ public class GameModeBalance extends AppCompatActivity {
         DatabaseReference mRef = mData.getReference(Objects.requireNonNull(mAuth.getUid()));
 
         balance = getIntent().getIntExtra("balance", 0);
-        textView.setText("Congratulations! ");
-        if(balance >= 0)
+        if(balance >= 0) {
+            textView.setText("Congratulations! ");
             textView2.setText("Bilcoin Earned: " + (balance));
-        else
+        }
+        else {
+            textView.setText("Nice Try! ");
             textView2.setText("Bilcoin Lost: " + (-balance));
+        }
 
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
