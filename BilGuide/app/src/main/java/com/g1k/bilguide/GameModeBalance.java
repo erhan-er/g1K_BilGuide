@@ -63,9 +63,9 @@ public class GameModeBalance extends AppCompatActivity {
                 buttonMainMenu.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        dataSnapshot.getRef().child("bilcoin").setValue( foo );
                         finish();
                         startActivity(new Intent(getApplicationContext(), MainMenuActivity.class));
+                        dataSnapshot.getRef().child("bilcoin").setValue( foo );
                     }
                 });
             }
