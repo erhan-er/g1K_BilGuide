@@ -20,4 +20,6 @@ This week, we did a Zoom meeting and we prepared information mode building selec
 ### ~ 27.04.2020 ~
 This week, Aslı and I continued serching for the best maps application, and we concluded that MapBox meets our needs. We did another Zoom meeting and we decided to learn MapBox coding until 29th April. Starting from 29th April, I did some applications of MapBox system during 3 days such as getting current location, directing routes from location to specific point etc. However, it was tiring because finding necessary resources for directing routes and navigation in MapBox was hard. Finally, we did completely working navigation activity in 4th May. We are able to get current location, direct routes from current location to specified point and navigate.
 
+### ~ 05.05.2020 ~
+This week we did a meeting in order to we merged three parts. It was hard because even java files are different from each other; gradle,res and manifest files have the same name and merging these was not so easy. Also, I added splash screen, which is screen that appears 3 seconds when the user enters the app, with my friends. Now, there are some minor bugs such what will be done when back pressed etc. Me and all group will try to solve them.
 ****
