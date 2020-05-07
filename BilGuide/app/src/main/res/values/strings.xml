@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BilGuide</string>
+    <string name="email">Email</string>
+    <string name="_0">0</string>
+    <string name="hello_erhan">Hello Erhan!</string>
+    <string name="description">BilGuide is an application that helps you to discover Bilkent University and get routes.
+                        In the main menu, you will see two modes. Game mode provides you to discover the main campus, and earn
+                        BilCoins! Information mode helps you to go wherever you want inside the campus. Just log in and enjoy!</string>
+    <string name="navigation_guidance_day">mapbox://styles/mapbox/navigation-guidance-day-v4</string>
+    <string name="access_token" translatable="false">pk.eyJ1IjoiY3MxMDJiaWxndWlkZSIsImEiOiJjazlra2ZweXcwY3plM2Vuc2lkamF1bXV3In0.VCbskj3Lj51vrcMuGkQyVA</string>
+    <string name="discover_the_building">discover the building</string>
+    <string name="user_location_permission_explanation">This app needs location permissions to show its functionality.</string>
+    <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
+</resources>

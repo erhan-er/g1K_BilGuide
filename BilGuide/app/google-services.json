@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "33827809138",
+    "firebase_url": "https://bilguide-ef66e.firebaseio.com",
+    "project_id": "bilguide-ef66e",
+    "storage_bucket": "bilguide-ef66e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33827809138:android:2d580200a6251bd90a9feb",
+        "android_client_info": {
+          "package_name": "com.g1k.bilguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33827809138-5b0pbqical5ohjantotk90a0s0lsb8sf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.g1k.bilguide",
+            "certificate_hash": "3d6bab6fd9e32e5a5d1acce83717802a8fca2b1e"
+          }
+        },
+        {
+          "client_id": "33827809138-lfpaifh5t5uivfo3cg87trbjap5mio2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL9bd-dsWsZbsysPKxL5Fc97EAGcnDJrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33827809138-lfpaifh5t5uivfo3cg87trbjap5mio2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

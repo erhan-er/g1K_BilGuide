@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.g1k.bilguide">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/iconsquare"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/iconcircle"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ReadyActivity"></activity>
+        <activity android:name=".BilcoinActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".MainMenuActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".NeedHelpActivity" />
+        <activity android:name=".GameModeBalance" />
+        <activity android:name=".GameModeDiscovery" />
+        <activity android:name=".GameModeMain" />
+        <activity android:name=".GameModeMap" />
+        <activity android:name=".SelectBuilding" />
+        <activity android:name=".Building" />
+        <activity android:name=".InfoModeMapsActivity" />
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
