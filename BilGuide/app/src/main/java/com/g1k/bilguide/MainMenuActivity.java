@@ -1,8 +1,12 @@
 package com.g1k.bilguide;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,6 +44,7 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         setUpUIViews();
+        isInternetEnabled();
 
         // creates a firebase authentication object
         mAuth = FirebaseAuth.getInstance();
@@ -98,6 +103,26 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), SelectBuilding.class));
             }
         });
+    }
+
+    public void isInternetEnabled() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = connectivityManager.getActiveNetworkInfo();
+        if ( netInfo != null && netInfo.isConnectedOrConnecting() ) {
+            return;
+        } else {
+            Toast.makeText(this, "You need to have an internet connection before using BilGuide.", Toast.LENGTH_LONG).show();
+            startActivity( new Intent(Settings.ACTION_SETTINGS) );
+        }
+    }
+
+    public void onBackPressed(){
+
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+        System.exit(0);
     }
 
     /**
