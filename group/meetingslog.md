@@ -29,4 +29,11 @@ This week we allocated our group into 3 sub-groups.
 In this meeting we discussed our progress and showed what we did.
 
 ****
+### Meeting ~ (06.05.2020, 2 hr)
+****
+**Present:** Everyone
+
+In this meeting, three groups which are Entrance Page, Game Mode and Info Mode showed their codes along with we discussed how to merge different projects that we have all created on github. We expected that some conflicts will emerge. At first, we encountered some conflicts as we expected, however, we learnt how to manage to combine all code through solving these conflicts. Finally, we uploaded our merged project and determined what might be added to the project like integrating the balance the user will earn in the game mode into balance page accessed from main menu by using Firebase that Entrance Page group arranged.
+
+****
 ****
