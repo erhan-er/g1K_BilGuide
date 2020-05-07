@@ -60,14 +60,14 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
         }
         else if(buildingName.equals("EA")) {
             questionList.add("Which floor is Yapı Kredi bank located on?");
-            questionList.add("Which cafe are there in EA building entrance? ");
+            questionList.add("Which cafe is there in EA building entrance? ");
             questionList.add("Which amphitheater is there in this building?");
             questionList.add("You completed the questions. Please press the button to view your balance.");
         }
         else if(buildingName.equals("SA")) {
             questionList.add("Which floor is Foucault pendulum located on? ");
             questionList.add("Which structure do the stairs around the pendulum resemble?");
-            questionList.add("Which department is not located in SA building?");
+            questionList.add("Which department is located in SA building?");
             questionList.add("You completed the questions. Please press the button to view your balance.");
         }
         else if(buildingName.equals("FF")) {
