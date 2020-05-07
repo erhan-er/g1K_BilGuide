@@ -317,7 +317,6 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 answerList.set(4,"Adnan Saygun");
                 answerList.set(5,"C Blok Auditorium");
                 answerList.set(6,"Mithat Çoruh");
-                bilCoin -= 5;
                 return true;
             }
             else if ((index == 2) && answerSelected.equals("Mithat Çoruh")) {
