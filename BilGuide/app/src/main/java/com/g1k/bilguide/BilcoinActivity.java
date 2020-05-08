@@ -18,6 +18,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -58,10 +61,12 @@ public class BilcoinActivity extends AppCompatActivity {
                         int foo;
                         foo = Integer.parseInt(total.getText().toString()) + 50;
                         total.setText( "" + foo );
+                        ArrayList<String> array = new ArrayList<String>( Arrays.asList ( "A", "B", "EA", "EE", "FF", "G", "SA" ));
 
                         // updates the specific data
                         assert user != null;
                         dataSnapshot.getRef().child("bilcoin").setValue( user.getBilcoin() + 50 );
+                        dataSnapshot.getRef().child( "buildings").setValue( array );
                     }
                 });
                 minus.setOnClickListener(new View.OnClickListener() {

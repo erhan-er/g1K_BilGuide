@@ -65,6 +65,20 @@ public class MainMenuActivity extends AppCompatActivity {
                 assert profile != null;
                 coin.setText( "" + profile.getBilcoin() );
                 hello.setText( "Hello " + profile.getUserName());
+
+                if ( profile.getSizeOfBuildings() != 1 ) {
+                    game.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(getApplicationContext(), ReadyActivity.class));
+                        }
+                    });
+                }
+                else
+                {
+                    game.setEnabled(false);
+                    Toast.makeText( MainMenuActivity.this, "You finished the game mode", Toast.LENGTH_SHORT ).show();
+                }
             }
 
             @Override
@@ -90,12 +104,7 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        game.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ReadyActivity.class));
-            }
-        });
+
 
         info.setOnClickListener(new View.OnClickListener() {
             @Override

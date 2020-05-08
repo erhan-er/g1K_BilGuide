@@ -1,5 +1,6 @@
 package com.g1k.bilguide;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,18 +13,31 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class GameModeMain extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
     private Spinner spinner;
     private Button buttonGo;
     private String answerSelected;
-    private ArrayList<String> questionList;
     private TextView questionText;
     private Intent intent;
     private int index;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> answerList;
+    private FirebaseAuth mAuth;
+    private FirebaseDatabase mData;
+    private UserProfile user;
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         answerSelected = parent.getItemAtPosition(position).toString();
@@ -44,40 +58,53 @@ public class GameModeMain extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_mode_main);
-        answerList = new ArrayList<String>();
-        answerList.add("-");
-        answerList.add("A");
-        answerList.add("B");
-        answerList.add("EA");
-        answerList.add("EE");
-        answerList.add("FF");
-        answerList.add("G");
-        answerList.add("SA");
-        answerList.add("V");
-        questionList = new ArrayList<String>();
-        questionList.add("Where is Faculty of Economics, Administrative, and Social Sciences?");
-        questionList.add("Where is Faculty of Law?");
-        questionList.add("Where is Faculty of   Engineering?");
-        questionList.add("Where is Department of Electrical and Electronic Engineering?");
-        questionList.add("Where is Faculty of Art, Design and Architecture?");
-        questionList.add("Where is Faculty of Education?");
-        questionList.add("Where is Faculty of Science?");
-        questionList.add("Which building has the largest lecture halls on the campus?");
+
         questionText = findViewById(R.id.questionText);
-        index = ((int)(questionList.size()*Math.random()));
-        questionText.setText(questionList.get(index));
         spinner = findViewById(R.id.spinner);
         buttonGo = findViewById(R.id.buttonGo2);
-        buttonGo.setOnClickListener(new View.OnClickListener() {
+
+        answerList = new ArrayList<String>( Arrays.asList( "-", "A", "B", "EA", "EE", "FF", "G", "SA", "V"));
+
+        mAuth = FirebaseAuth.getInstance();
+        mData = FirebaseDatabase.getInstance();
+
+        DatabaseReference mRef = mData.getReference(Objects.requireNonNull(mAuth.getUid()));
+
+
+
+        mRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                if(checkAnswer()) {
-                    intent = new Intent(GameModeMain.this, GameModeMap.class);
-                    intent.putExtra("answer",answerSelected);
-                    startActivity(intent);
-                }
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                user = dataSnapshot.getValue( UserProfile.class );
+
+                assert user != null;
+                ArrayList questionList = user.getBuildings();
+                index = ( int )( ( user.getSizeOfBuildings() - 1 ) * Math.random() );
+                questionText.setText( user.getQuestion( index) );
+
+
+
+                buttonGo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(checkAnswer()) {
+                            intent = new Intent(GameModeMain.this, GameModeMap.class);
+                            intent.putExtra("answer",answerSelected);
+                            questionList.remove( index );
+                            dataSnapshot.getRef().child("buildings").setValue( questionList );
+                            dataSnapshot.getRef().child( "sizeOfBuildings" ).setValue( user.getSizeOfBuildings() );
+                            startActivity(intent);
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText( GameModeMain.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
             }
         });
+
         adapter = new ArrayAdapter<String>(getApplicationContext()
                 , R.layout.forspinner
                 , android.R.id.text1
@@ -90,29 +117,30 @@ public class GameModeMain extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
     public boolean checkAnswer(){
-        if (index == 0 && answerSelected.equals("A")){
+        if ( user.getQuestion( index ).equals("Where is Faculty of Economics, Administrative, and Social Sciences?") && answerSelected.equals("A")){
             return true;
         }
-        else if (index == 1 && answerSelected.equals("B")) {
+        else if ( user.getQuestion( index ).equals("Where is Faculty of Law?") && answerSelected.equals("B")) {
             return true;
         }
-        else if (index == 2 && answerSelected.equals("EA")) {
+        else if (user.getQuestion(index ).equals("Where is Faculty of   Engineering?") && answerSelected.equals("EA")) {
             return true;
         }
-        else if (index == 3 && answerSelected.equals("EE")) {
+        else if (user.getQuestion(index).equals("Where is Department of Electrical and Electronic Engineering?") && answerSelected.equals("EE")) {
             return true;
         }
-        else if (index == 4 && answerSelected.equals("FF")) {
+        else if (user.getQuestion(index).equals("Where is Faculty of Art, Design and Architecture?") && answerSelected.equals("FF")) {
             return true;
         }
-        else if (index == 5 && answerSelected.equals("G")) {
+        else if ( user.getQuestion(index).equals("Where is Faculty of Education?") && answerSelected.equals("G")) {
             return true;
         }
-        else if (index == 6 && answerSelected.equals("SA")) {
+        else if (user.getQuestion(index).equals("Where is Faculty of Science?") && answerSelected.equals("SA")) {
             return true;
         }
-        else if (index == 7 && answerSelected.equals("V")) {
+        else if (user.getQuestion(index).equals("Which building has the largest lecture halls on the campus?") && answerSelected.equals("V")) {
             return true;
         }
         else if(answerSelected.equals("-"))

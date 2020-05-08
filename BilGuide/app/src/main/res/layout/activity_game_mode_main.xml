@@ -39,14 +39,15 @@
         android:layout_width="257dp"
         android:layout_height="183dp"
         android:autoSizeTextType="uniform"
-        android:text="Where is BCC?"
+        android:text="Program is going to crash"
         android:textColor="#3961AB"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintVertical_bias="0.34" />
 
     <Button
         android:id="@+id/buttonGo2"
