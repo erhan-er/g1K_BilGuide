@@ -6,52 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".BilcoinActivity">
 
-    <Button
-        android:id="@+id/minus"
-        android:layout_width="256dp"
-        android:layout_height="128dp"
-        android:text="-50 coin"
+    <Spinner
+        android:id="@+id/spinnerCafes"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="260dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adder"
-        app:layout_constraintVertical_bias="0.118" />
-
-    <Button
-        android:id="@+id/adder"
-        android:layout_width="256dp"
-        android:layout_height="128dp"
-        android:text="+50 coin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/total"
-        android:layout_width="256dp"
-        android:layout_height="128dp"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
-
-    <Button
-        android:id="@+id/backButton"
+        android:id="@+id/textViewBilcoinBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:layout_marginTop="84dp"
+        android:gravity="center"
+        android:text="Your Balance: "
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSpend"
+        android:layout_width="139dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="93dp"
+        android:text="PURCHASE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/minus" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textViewQuestion"
+        android:layout_width="339dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="56dp"
+        android:gravity="center"
+        android:text="Where do you want to spend your BilCoins?"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBilcoinBalance" />
+
+    <TextView
+        android:id="@+id/textViewCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:text="Your code: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSpend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

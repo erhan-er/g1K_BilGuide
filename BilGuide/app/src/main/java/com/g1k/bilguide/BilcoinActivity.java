@@ -1,112 +1,107 @@
 package com.g1k.bilguide;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
 
-/**
- * Bilcoin activity
- * @author Erhan ER, Berk BALTACI
- * @version 1.0
- */
-public class BilcoinActivity extends AppCompatActivity {
+public class BilcoinActivity<Firebase> extends AppCompatActivity {
 
-    private Button plus, minus, back;
-    private TextView total;
-    private FirebaseAuth mAuth;
+    private Button buttonSpend;
+    private TextView textViewBilcoinBalance;
+    private TextView textViewCode;
+    private Spinner spinnerCafes;
+    private ArrayAdapter<String> adapterCafes;
+    private ArrayList<String> cafes;
+    private int purchaseCode;
+    private Firebase mAuth;
     private FirebaseDatabase mData;
+    private UserProfile user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bilcoin);
-        setUpUIViews();
 
-        // creates a firebase authentication object
-        mAuth = FirebaseAuth.getInstance();
+        cafes = new ArrayList<String>();
+        cafes.add( "Coffee Break - 1 Coffee(Optional) - 100 BilCoin");
+        cafes.add( "Cafe In - 1 Pasta - 200 BilCoin");
+        cafes.add( "Kıraç - 1 Soup - 150 BilCoin");
+        cafes.add( "Speed - 1 Orange Juice - 100 BilCoin");
+        cafes.add( "Mozart - 1 Toast with Cheese - 150 BilCoin");
+        cafes.add( "Fameo - 1 Water Bottle - 80 BilCoin");
+        cafes.add( "Bilka - 1 Cup of Tea - 50 BilCoin");
 
-        // creates a firebase database object
-        mData = FirebaseDatabase.getInstance();
+        buttonSpend = findViewById(R.id.buttonSpend);
+        textViewBilcoinBalance = findViewById(R.id.textViewBilcoinBalance);
+        textViewCode = findViewById(R.id.textViewCode);
+        spinnerCafes = findViewById(R.id.spinnerCafes);
 
-        // creates a reference to the database
-        DatabaseReference mRef = mData.getReference(Objects.requireNonNull(mAuth.getUid()));
 
-        mRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                UserProfile user = dataSnapshot.getValue( UserProfile.class );
-                plus.setOnClickListener(new View.OnClickListener() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onClick(View v) {
-                        int foo;
-                        foo = Integer.parseInt(total.getText().toString()) + 50;
-                        total.setText( "" + foo );
-                        ArrayList<String> array = new ArrayList<String>( Arrays.asList ( "A", "B", "EA", "EE", "FF", "G", "SA" ));
+        adapterCafes = new ArrayAdapter<String>(getApplicationContext()
+                , R.layout.spinneritem
+                , android.R.id.text1
+                , cafes);
+        adapterCafes.setDropDownViewResource(R.layout.forspinner);
+        spinnerCafes.setAdapter(adapterCafes);
 
-                        // updates the specific data
-                        assert user != null;
-                        dataSnapshot.getRef().child("bilcoin").setValue( user.getBilcoin() + 50 );
-                        dataSnapshot.getRef().child( "buildings").setValue( array );
-                    }
-                });
-                minus.setOnClickListener(new View.OnClickListener() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onClick(View v) {
-                        int foo;
-                        foo = Integer.parseInt(total.getText().toString()) - 50;
-                        total.setText( "" + foo );
+        //show balance
+        textViewBilcoinBalance.setText( "Your balance: ");
 
-                        // updates the specific data
-                        assert user != null;
-                        dataSnapshot.getRef().child("bilcoin").setValue( user.getBilcoin() - 50 );
-                    }
-                });
-            }
+        if(balance < 50){
+            buttonSpend.setEnabled(false);
+        }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText( BilcoinActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        back.setOnClickListener(new View.OnClickListener() {
+        DatabaseReference mRef = mData.getReference( mAuth.getUid());
+        buttonSpend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                startActivity( new Intent( BilcoinActivity.this, MainMenuActivity.class));
+                if(spinnerCafes.getSelectedItemPosition() == 0){
+                    //100 bilcoin decrease
+                    purchaseCode = (int) (Math.random() * 89999) + 10001;
+                    textViewCode.setText( "Your code is : " + purchaseCode);
+                }
+                if(spinnerCafes.getSelectedItemPosition() == 1){
+                    //200 bilcoin decrease
+                    purchaseCode = (int) (Math.random() * 89999) + 10001;
+                    textViewCode.setText( "Your code is : " + purchaseCode);
+                }
+                if(spinnerCafes.getSelectedItemPosition() == 2){
+                    //150 bilcoin decrease
+                    purchaseCode = (int) (Math.random() * 89999) + 10001;
+                    textViewCode.setText( "Your code is : " + purchaseCode);
+                }
+                if(spinnerCafes.getSelectedItemPosition() == 3){
+                    //100 bilcoin decrease
+                    purchaseCode = (int) (Math.random() * 89999) + 10001;
+                    textViewCode.setText( "Your code is : " + purchaseCode);
+                }
+                if(spinnerCafes.getSelectedItemPosition() == 4){
+                    //150 bilcoin decrease
+                    purchaseCode = (int) (Math.random() * 89999) + 10001;
+                    textViewCode.setText( "Your code is : " + purchaseCode);
+                }
+                if(spinnerCafes.getSelectedItemPosition() == 5){
+                    //80 bilcoin decrease
+                    purchaseCode = (int) (Math.random() * 89999) + 10001;
+                    textViewCode.setText( "Your code is : " + purchaseCode);
+                }
+                if(spinnerCafes.getSelectedItemPosition() == 6){
+                    //50 bilcoin decrease
+                    purchaseCode = (int) (Math.random() * 89999) + 10001;
+                    textViewCode.setText( "Your code is : " + purchaseCode);
+                }
             }
         });
-    }
 
-    /**
-     * sets the buttons and text view
-     */
-    private void setUpUIViews()
-    {
-        plus = (Button)findViewById(R.id.adder);
-        minus = (Button)findViewById(R.id.minus);
-        total = (TextView) findViewById(R.id.total);
-        back = (Button)findViewById(R.id.backButton);
     }
 }
