@@ -156,7 +156,7 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 answerList.set(1,"International Relations");
                 answerList.set(2,"Philosophy");
                 answerList.set(3,"Economics");
-                answerList.set(4,"Management");
+                answerList.set(4,"Business Administration");
                 answerList.set(5,"English Language and Literature");
                 answerList.set(6,"American Culture and Literature");
                 return true;
@@ -197,7 +197,7 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                     answerList.set(1,"International Relations");
                     answerList.set(2,"Philosophy");
                     answerList.set(3,"Economics");
-                    answerList.set(4,"Management");
+                    answerList.set(4,"Business Administration");
                     answerList.set(5,"English Language and Literature");
                     answerList.set(6,"American Culture and Literature");
                     bilCoin -= 5;

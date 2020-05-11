@@ -143,7 +143,7 @@ public class GameModeMap extends AppCompatActivity implements OnMapReadyCallback
                     }
                 }
                 if( buildingName.equals("V")) {
-                    if(newLocation.latitude() > 39.8669 && newLocation.latitude() < 39.8672 && newLocation.longitude() > 32.7499 && newLocation.longitude() < 32.7502) {
+                    if(newLocation.latitude() > 39.8668 && newLocation.latitude() < 39.8673 && newLocation.longitude() > 32.7496 && newLocation.longitude() < 32.7505) {
                         buttonGo2.setEnabled(true);
                         Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
                     }
