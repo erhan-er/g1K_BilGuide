@@ -45,7 +45,7 @@ public class GameModeMap extends AppCompatActivity implements OnMapReadyCallback
     private Button             buttonGo2;
     private String             buildingName;
     private NavigationView     navigationView;
-    private Button checkArrival;
+    private Button             checkArrival;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

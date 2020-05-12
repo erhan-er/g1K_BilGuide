@@ -24,20 +24,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
+/**
+ * GameModeMain class, asks questions about a random Building
+ * @author Furkan Turunç, Murat Furkan Uğurlu, Recep Uysal
+ * @version 1.0
+ */
 public class GameModeMain extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    // variables
-    private Spinner spinner;
-    private Button buttonGo;
-    private String answerSelected;
-    private TextView questionText;
-    private Intent intent;
-    private int index;
+    // properties
+    private Spinner              spinner;
+    private Button               buttonGo;
+    private String               answerSelected;
+    private TextView             questionText;
+    private Intent               intent;
+    private int                  index;
     private ArrayAdapter<String> adapter;
-    private ArrayList<String> answerList;
-    private FirebaseAuth mAuth;
-    private FirebaseDatabase mData;
-    private UserProfile user;
+    private ArrayList<String>    answerList;
+    private FirebaseAuth         mAuth;
+    private FirebaseDatabase     mData;
+    private UserProfile          user;
 
     // methods
     /*

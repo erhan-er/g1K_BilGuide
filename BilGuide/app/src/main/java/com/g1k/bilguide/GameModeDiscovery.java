@@ -13,26 +13,31 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 
+/**
+ * GameModeDiscovery class, asks specific questions about a Building
+ * @author Furkan Turunç, Murat Furkan Uğurlu, Recep Uysal
+ * @version 1.0
+ */
 public class GameModeDiscovery extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    // variables
-    private Spinner spinner;
-    private Button buttonGo;
-    private String answerSelected;
-    private ArrayList<String> questionList;
-    private ArrayList<String> answerList;
-    private TextView questionText;
-    private Intent intent;
-    private String buildingName;
-    private int index;
-    private int bilCoin;
-    private int wrongTry;
+    // properties
+    private Spinner              spinner;
+    private Button               buttonGo;
+    private String               answerSelected;
+    private ArrayList<String>    questionList;
+    private ArrayList<String>    answerList;
+    private TextView             questionText;
+    private Intent               intent;
+    private String               buildingName;
+    private int                  index;
+    private int                  bilCoin;
+    private int                  wrongTry;
     private ArrayAdapter<String> adapter;
 
     // methods
-    /*
-     *This methods is the default method of android studio, which applies main process for widgets.
-     * @param parent, a View object, position of selected item, id
+    /**
+     * This methods is the default method of android studio, which applies main process for widgets.
+     * @param savedInstanceState , a Bundle object
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
