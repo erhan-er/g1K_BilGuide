@@ -21,27 +21,40 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * BilcoinActivity class, gives users opportunities to buy several items from
+ * the cafeterias in Bilkent University
+ * @author Aslı Dinç, Berk Baltacı, Erhan Er, Furkan Turunç,
+ *         Muhammet Abdullah Koç, Murat Furkan Uğurlu, Recep Uysal
+ */
 public class BilcoinActivity extends AppCompatActivity {
 
-    private Button buttonSpend;
-    private TextView textViewBilcoinBalance;
-    private TextView textViewCode;
-    private Spinner spinnerCafes;
+    // properties
+    private Button               buttonSpend;
+    private TextView             textViewBilcoinBalance;
+    private TextView             textViewCode;
+    private Spinner              spinnerCafes;
     private ArrayAdapter<String> adapterCafes;
-    private ArrayList<String> cafes;
-    private int purchaseCode;
-    private FirebaseAuth mAuth;
-    private FirebaseDatabase mData;
-    private UserProfile user;
+    private ArrayList<String>    cafes;
+    private int                  purchaseCode;
+    private FirebaseAuth         mAuth;
+    private FirebaseDatabase     mData;
+    private UserProfile          user;
 
+    // methods
+    /**
+     * OnCreate method, default method of android apps
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bilcoin);
 
+        // initializing firebase properties
         mAuth = FirebaseAuth.getInstance();
         mData = FirebaseDatabase.getInstance();
 
+        // initializing (ArrayList) cafes and adding cafes and items with their prices
         cafes = new ArrayList<String>();
         cafes.add( "Coffee Break - 1 Coffee(Optional) - 100 BilCoin");
         cafes.add( "Cafe In - 1 Pasta - 200 BilCoin");
@@ -51,12 +64,13 @@ public class BilcoinActivity extends AppCompatActivity {
         cafes.add( "Fameo - 1 Water Bottle - 80 BilCoin");
         cafes.add( "Bilka - 1 Cup of Tea - 50 BilCoin");
 
+        // linking spend button and textViews that will show code and balance info
         buttonSpend = findViewById(R.id.buttonSpend);
         textViewBilcoinBalance = findViewById(R.id.textViewBilcoinBalance);
         textViewCode = findViewById(R.id.textViewCode);
         spinnerCafes = findViewById(R.id.spinnerCafes);
 
-
+        // initializing adapterCafes
         adapterCafes = new ArrayAdapter<String>(getApplicationContext()
                 , R.layout.spinneritem
                 , android.R.id.text1
@@ -66,6 +80,7 @@ public class BilcoinActivity extends AppCompatActivity {
 
         DatabaseReference mRef = mData.getReference(Objects.requireNonNull(mAuth.getUid()));
 
+        // adding valueListener to have control over changes
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -75,17 +90,22 @@ public class BilcoinActivity extends AppCompatActivity {
                 assert user != null;
                 textViewBilcoinBalance.setText( "Your balance: " + user.getBilcoin() );
 
-                if( user.getBilcoin() < 50){
+                if( user.getBilcoin() < 50) {
                     buttonSpend.setEnabled(false);
                 }
 
+                // setting clickListener to let the user spend
                 buttonSpend.setOnClickListener(new View.OnClickListener() {
+                    /**
+                     * onClick method, lets users to spend Bilcoin and updates balance info
+                     * according to the item that users select
+                     * @param v, is a View object
+                     */
                     @Override
                     public void onClick(View v) {
-                        if(spinnerCafes.getSelectedItemPosition() == 0){
+                        if(spinnerCafes.getSelectedItemPosition() == 0) {
                             //100 bilcoin decrease
-                            if ( user.getBilcoin() >= 100 )
-                            {
+                            if ( user.getBilcoin() >= 100 ) {
                                 mRef.child("bilcoin").setValue( user.getBilcoin() - 100 );
                                 purchaseCode = (int) (Math.random() * 89999) + 10001;
                                 textViewCode.setText( "Your code is : " + purchaseCode);
@@ -94,10 +114,9 @@ public class BilcoinActivity extends AppCompatActivity {
                             else
                                 Toast.makeText( BilcoinActivity.this, "Your BilCoin is not enough", Toast.LENGTH_SHORT).show();
                         }
-                        if(spinnerCafes.getSelectedItemPosition() == 1){
+                        if(spinnerCafes.getSelectedItemPosition() == 1) {
                             //200 bilcoin decrease
-                            if ( user.getBilcoin() >= 200 )
-                            {
+                            if ( user.getBilcoin() >= 200 ) {
                                 mRef.child("bilcoin").setValue( user.getBilcoin() - 200 );
                                 purchaseCode = (int) (Math.random() * 89999) + 10001;
                                 textViewCode.setText( "Your code is : " + purchaseCode);
@@ -106,10 +125,9 @@ public class BilcoinActivity extends AppCompatActivity {
                             else
                                 Toast.makeText( BilcoinActivity.this, "Your BilCoin is not enough", Toast.LENGTH_SHORT).show();
                         }
-                        if(spinnerCafes.getSelectedItemPosition() == 2){
+                        if(spinnerCafes.getSelectedItemPosition() == 2) {
                             //150 bilcoin decrease
-                            if ( user.getBilcoin() >= 150 )
-                            {
+                            if ( user.getBilcoin() >= 150 ) {
                                 mRef.child("bilcoin").setValue( user.getBilcoin() - 150 );
                                 purchaseCode = (int) (Math.random() * 89999) + 10001;
                                 textViewCode.setText( "Your code is : " + purchaseCode);
@@ -118,10 +136,9 @@ public class BilcoinActivity extends AppCompatActivity {
                             else
                                 Toast.makeText( BilcoinActivity.this, "Your BilCoin is not enough", Toast.LENGTH_SHORT).show();
                         }
-                        if(spinnerCafes.getSelectedItemPosition() == 3){
+                        if(spinnerCafes.getSelectedItemPosition() == 3) {
                             //100 bilcoin decrease
-                            if ( user.getBilcoin() >= 100 )
-                            {
+                            if ( user.getBilcoin() >= 100 ) {
                                 mRef.child("bilcoin").setValue( user.getBilcoin() - 100 );
                                 purchaseCode = (int) (Math.random() * 89999) + 10001;
                                 textViewCode.setText( "Your code is : " + purchaseCode);
@@ -130,10 +147,9 @@ public class BilcoinActivity extends AppCompatActivity {
                             else
                                 Toast.makeText( BilcoinActivity.this, "Your BilCoin is not enough", Toast.LENGTH_SHORT).show();
                         }
-                        if(spinnerCafes.getSelectedItemPosition() == 4){
+                        if(spinnerCafes.getSelectedItemPosition() == 4) {
                             //150 bilcoin decrease
-                            if ( user.getBilcoin() >= 150 )
-                            {
+                            if ( user.getBilcoin() >= 150 ) {
                                 mRef.child("bilcoin").setValue( user.getBilcoin() - 150 );
                                 purchaseCode = (int) (Math.random() * 89999) + 10001;
                                 textViewCode.setText( "Your code is : " + purchaseCode);
@@ -142,10 +158,9 @@ public class BilcoinActivity extends AppCompatActivity {
                             else
                                 Toast.makeText( BilcoinActivity.this, "Your BilCoin is not enough", Toast.LENGTH_SHORT).show();
                         }
-                        if(spinnerCafes.getSelectedItemPosition() == 5){
+                        if(spinnerCafes.getSelectedItemPosition() == 5) {
                             //80 bilcoin decrease
-                            if ( user.getBilcoin() >= 80 )
-                            {
+                            if ( user.getBilcoin() >= 80 ) {
                                 mRef.child("bilcoin").setValue( user.getBilcoin() - 80 );
                                 purchaseCode = (int) (Math.random() * 89999) + 10001;
                                 textViewCode.setText( "Your code is : " + purchaseCode);
@@ -154,10 +169,9 @@ public class BilcoinActivity extends AppCompatActivity {
                             else
                                 Toast.makeText( BilcoinActivity.this, "Your BilCoin is not enough", Toast.LENGTH_SHORT).show();
                         }
-                        if(spinnerCafes.getSelectedItemPosition() == 6){
+                        if(spinnerCafes.getSelectedItemPosition() == 6) {
                             //50 bilcoin decrease
-                            if ( user.getBilcoin() >= 50 )
-                            {
+                            if ( user.getBilcoin() >= 50 ) {
                                 mRef.child("bilcoin").setValue( user.getBilcoin() - 50 );
                                 purchaseCode = (int) (Math.random() * 89999) + 10001;
                                 textViewCode.setText( "Your code is : " + purchaseCode);
@@ -170,12 +184,14 @@ public class BilcoinActivity extends AppCompatActivity {
                 });
             }
 
+            /**
+             * onCancelled method is related to database process about cancellation
+             * @param databaseError
+             */
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText( BilcoinActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 }
