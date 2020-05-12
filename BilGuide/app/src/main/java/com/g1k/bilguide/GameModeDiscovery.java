@@ -14,6 +14,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class GameModeDiscovery extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    // variables
     private Spinner spinner;
     private Button buttonGo;
     private String answerSelected;
@@ -27,6 +29,11 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
     private int wrongTry;
     private ArrayAdapter<String> adapter;
 
+    // methods
+    /*
+     *This methods is the default method of android studio, which applies main process for widgets.
+     * @param parent, a View object, position of selected item, id
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +53,7 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
         answerList.add("2");
         answerList.add("3");
         buildingName = getIntent().getStringExtra("answer");
+        // setting three questions for each building by adding them to the question list
         if(buildingName.equals("B")) {
             questionList.add("Which floor is Mozart Cafe located on?");
             questionList.add("How many lab classes are there on the second floor?");
@@ -94,16 +102,21 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
             questionList.add("In which floor you can shift to A building directly?");
             questionList.add("You completed the questions. Please press the button to view your balance.");
         }
-        index = 0;
-        questionText.setText(questionList.get(index));
+        index = 0; // This means question are viewed in turn by starting index at zero
+        questionText.setText(questionList.get(index)); // setting the question
+
+        // When the button go was pressed, this method works
         buttonGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Passing from this activity to the next activity which is balance page
                 intent = new Intent(GameModeDiscovery.this, GameModeBalance.class);
+                // Putting balance earned to the next page to view it
                 intent.putExtra("balance", bilCoin);
                 startActivity(intent);
             }
         });
+        // Setting adapter for spinner
         adapter = new ArrayAdapter<String>(getApplicationContext()
                 , R.layout.forspinner
                 , android.R.id.text1
@@ -111,9 +124,16 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
     }
+
+    /*
+     *This methods works at which an item is selected in spinner
+     * @param parent, a View object, position of selected item, id
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // Getting selected answer
         answerSelected = parent.getItemAtPosition(position).toString();
+        // Shows a message as to accuracy of answer by using  the method checkAnswer
         if (!checkAnswer()) {
             Toast.makeText(parent.getContext(), "Wrong answer", Toast.LENGTH_SHORT).show();
         }
@@ -121,6 +141,7 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
             if (answerSelected.equals("-")) {
             }
             else if (index == 3){
+                // When the last question is answered this message is viewed
                 Toast.makeText(parent.getContext(), "Go", Toast.LENGTH_SHORT).show();
             }
             else {
@@ -128,18 +149,28 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
             }
         }
     }
+    // This method makes nothing when no item was selected in spinner
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    /*
+     * This method checks the answer by comparing the question with the selected answer.
+     * @return if the answer is correct, this method returns true, otherwise returns false
+     */
     public boolean checkAnswer() {
+        // setting the button unavailable
         buttonGo.setEnabled(false);
+        // For building A
         if (buildingName.equals("A")) {
+            // if the first question answered correctly
             if ((index == 0) && answerSelected.equals("0")) {
-                index++;
+                index++; // to view the next question
                 questionText.setText(questionList.get(index));
-                wrongTry = 0;
-                bilCoin += 10;
+                wrongTry = 0; // any previous wrong attempts are not cared for balance
+                bilCoin += 10; // for each correct answer, balance will increase as 10
+                // setting the options of the next question
                 answerList.set(1,"Mithat Çoruh");
                 answerList.set(2,"A Blok Auditorium");
                 answerList.set(3,"D Blok Auditorium");
@@ -148,11 +179,13 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 answerList.set(6,"B Blok Auditorium");
                 return true;
             }
+            // if the second question answered correctly
             else if (index == 1 && answerSelected.equals("C Blok Auditorium")) {
-                index++;
+                index++; // to view the next question
                 questionText.setText(questionList.get(index));
-                wrongTry = 0;
-                bilCoin += 10;
+                wrongTry = 0; // any previous wrong attempts are not cared for balance
+                bilCoin += 10; // for each correct answer, balance will increase as 10
+                // setting the options of the next question
                 answerList.set(1,"International Relations");
                 answerList.set(2,"Philosophy");
                 answerList.set(3,"Economics");
@@ -161,14 +194,16 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 answerList.set(6,"American Culture and Literature");
                 return true;
             }
+            // If the third question answered correctly
             else if ((index == 2) && answerSelected.equals("Management")) {
-                index++;
+                index++; // to view the next question
                 questionText.setText(questionList.get(index));
+                // Removing the options of the last question so that the user is unlikely to select an option anymore
                 for (int i = 0; i < 7; i++)
                     answerList.remove(0);
                 buttonGo.setEnabled(true);
-                wrongTry = 0;
-                bilCoin += 10;
+                wrongTry = 0; // any previous wrong attempts are not cared for balance
+                bilCoin += 10; // for each correct answer, balance will increase as 10
                 return true;
             }
             else if (answerSelected.equals("-"))
@@ -177,10 +212,12 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 return true;
             }
             else {
-                wrongTry++;
+                wrongTry++; // For each wrong answer, this is increased
+                // If the first question is answered wrongly three times
                 if (wrongTry == 3 && index == 0) {
-                    index++;
-                    wrongTry = 0;
+                    index++; // to view the next question
+                    wrongTry = 0; // setting wrong try to zero for other questions
+                    bilCoin -= 5;; // for each wrong answer, balance will decrease as 5
                     questionText.setText(questionList.get(index));
                     answerList.set(1,"Mithat Çoruh");
                     answerList.set(2,"A Blok Auditorium");
@@ -188,8 +225,8 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                     answerList.set(4,"Adnan Saygun");
                     answerList.set(5,"C Blok Auditorium");
                     answerList.set(6,"B Blok Auditorium");
-                    bilCoin -= 5;
                 }
+                // If the second question is answered wrongly three times
                 else if( wrongTry == 3 && index == 1) {
                     index++;
                     wrongTry = 0;
@@ -202,9 +239,11 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                     answerList.set(6,"American Culture and Literature");
                     bilCoin -= 5;
                 }
+                // If the third(last) question is answered wrongly three times
                 else if (wrongTry == 3 && index == 2) {
                     index++;
                     questionText.setText(questionList.get(index));
+                    // removing options
                     for (int i = 0; i < 7; i++)
                         answerList.remove(0);
                     buttonGo.setEnabled(true);
@@ -213,6 +252,10 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 return false;
             }
         }
+
+        // For building B
+        // For each wrong or correct answer, the state of index, wrongTry, and balance is the same as other buildings
+        // Options are changed question to question
         if (buildingName.equals("B")) {
             if ((index == 0) && answerSelected.equals("-1")) {
                 index++;
@@ -292,6 +335,10 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 return false;
             }
         }
+
+        // For building EA
+        // For each wrong or correct answer, the state of index, wrongTry, and balance is the same as other buildings
+        // Options are changed question to question
         if (buildingName.equals("EA")) {
             if ((index == 0) && answerSelected.equals("0")) {
                 index++;
@@ -371,6 +418,10 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 return false;
             }
         }
+
+        // For building EE
+        // For each wrong or correct answer, the state of index, wrongTry, and balance is the same as other buildings
+        // Options are changed question to question
         if (buildingName.equals("EE")) {
             if ((index == 0) && answerSelected.equals("3")) {
                 index++;
@@ -450,6 +501,10 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 return false;
             }
         }
+
+        // For building FF
+        // For each wrong or correct answer, the state of index, wrongTry, and balance is the same as other buildings
+        // Options are changed question to question
         if (buildingName.equals("FF")) {
             if ((index == 0) && answerSelected.equals("1")) {
                 index++;
@@ -529,6 +584,10 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 return false;
             }
         }
+
+        // For building G
+        // For each wrong or correct answer, the state of index, wrongTry, and balance is the same as other buildings
+        // Options are changed question to question
         if (buildingName.equals("G")) {
             if ((index == 0) && answerSelected.equals("0")) {
                 index++;
@@ -608,6 +667,10 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 return false;
             }
         }
+
+        // For building SA
+        // For each wrong or correct answer, the state of index, wrongTry, and balance is the same as other buildings
+        // Options are changed question to question
         if (buildingName.equals("SA")) {
             if ((index == 0) && answerSelected.equals("0")) {
                 index++;
@@ -687,6 +750,10 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 return false;
             }
         }
+
+        // For building V
+        // For each wrong or correct answer, the state of index, wrongTry, and balance is the same as other buildings
+        // Options are changed question to question
         if (buildingName.equals("V")) {
             if ((index == 0) && answerSelected.equals("0")) {
                 index++;
