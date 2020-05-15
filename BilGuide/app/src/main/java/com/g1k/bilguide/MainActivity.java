@@ -1,12 +1,17 @@
 package com.g1k.bilguide;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Button signIn, signUp;
     private TextView needHelp;
     private FirebaseAuth mAuth;
+    private static final int locationPermissionCode = 1;
 
     // program code
     @Override
@@ -68,7 +74,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity( new Intent( MainActivity.this, NeedHelpActivity.class ));
             }
         });
+
+        if(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+
+        }
+        else{
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)){
+                Toast.makeText(this, "You need to give access to location before continue", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, locationPermissionCode);
+            }
+        }
     }
+
 
     /**
      * Sets up the buttons and text view

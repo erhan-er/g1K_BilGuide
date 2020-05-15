@@ -20,7 +20,7 @@ public class UserProfile {
     public UserProfile(String userName, String userEmail) {
         this.userName = userName;
         this.userEmail = userEmail;
-        bilcoin = 0;
+        bilcoin = 20;
         buildings = new ArrayList<String>( Arrays.asList("Where is Faculty of Economics, Administrative, and Social Sciences?",
                 "Where is Faculty of Law?",
                 "Where is Faculty of   Engineering?",
