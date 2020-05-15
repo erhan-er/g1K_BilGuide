@@ -200,7 +200,7 @@ public class GameModeDiscovery extends AppCompatActivity implements AdapterView.
                 return true;
             }
             // If the third question answered correctly
-            else if ((index == 2) && answerSelected.equals("Management")) {
+            else if ((index == 2) && answerSelected.equals("Business Administration")) {
                 index++; // to view the next question
                 questionText.setText(questionList.get(index));
                 // Removing the options of the last question so that the user is unlikely to select an option anymore
