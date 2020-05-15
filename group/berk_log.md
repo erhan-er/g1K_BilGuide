@@ -14,3 +14,6 @@ This week we did a group meeting and decided that Erhan and I will do log in, si
 ### ~ 24.04.2020 ~
 
 This week erhan and I make a metting at zoom and we tried to make our parts. We encounter some difficulties because android studio is a new for us. Therefore, we have to solve this issues and also there are some problems occurs because of we tried to write all codes online.
+
+### ~ 04.05.2020 ~
+Finally, we finished the project. This week, all groups came together and combined all of the parts. Erhan and I integrated the game mode and bilcoin activity part to the database. We encountered with some minor problems, but we solved them.
