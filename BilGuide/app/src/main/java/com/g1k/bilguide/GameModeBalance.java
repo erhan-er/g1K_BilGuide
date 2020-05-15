@@ -29,7 +29,6 @@ public class GameModeBalance extends AppCompatActivity {
     // properties
     private TextView         textView;
     private TextView         textView2;
-    private TextView         textView3;
     private int              balance;
     private Button           buttonMainMenu;
     private FirebaseAuth     mAuth;
@@ -48,7 +47,6 @@ public class GameModeBalance extends AppCompatActivity {
         // Linking textViews that will show Bilcoin updates and congratulations message
         textView = findViewById(R.id.textView);
         textView2 = findViewById(R.id.textView2);
-        textView3 = findViewById(R.id.textView3);
 
         // Linking main menu button
         buttonMainMenu = findViewById(R.id.buttonMainMenu);
@@ -84,9 +82,6 @@ public class GameModeBalance extends AppCompatActivity {
 
                 // initializing foo that represents new Bilcoin info
                 int foo = user.getBilcoin() + balance;
-
-                // printing new balance info
-                textView3.setText( "New Balance: " + foo );
 
                 // adding clickListener for main menu button
                 buttonMainMenu.setOnClickListener(new View.OnClickListener() {
