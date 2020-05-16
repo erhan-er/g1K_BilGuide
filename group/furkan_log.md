@@ -23,4 +23,7 @@ In this meeting, we as the group of game mode learnt how to determine the state 
 ### ~05.05.2020 ~
 In this meeting, we as the group of game mode faced a problem, which is if the user is at the destination point when he/she opens the app, then he/she receives the message "You have arrived", however, if he/she starts at a different point and comes to the destination  point, then the message does not appear on the screen. Hence, we added a button named "check arrival" and a message called "Please press check arrival button when you arrives at the building". Thus, if the user arrives at the building and presses this button, the message "You have arrived!Discover the building!" appears on the screen and the button named "discover the building" is activated, if not, the message "You haven't arrived yet" appears and discovery button remains anavailable when he/she presses check arrival button. Also, I added locations of other buildings along with we determined the intervals of latitude and longitude of the buildings on campus to understand the state of arrival so we completed the mission of game mode except very few details to be reviewed before combining the codes with other groups. 
 
+### ~06.05.2020 ~
+We as the game mode group arranged some details in the code and we tested final version of game mode. It has worked properly so we have uploaded the codes to github so that we can merge all codes with the codes of other groups. Finally, we held an meeting via zoom and we have combined all codes.
+
 ****
