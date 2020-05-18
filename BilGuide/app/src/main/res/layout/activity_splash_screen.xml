@@ -8,13 +8,33 @@
     tools:context=".SplashScreenActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="254dp"
-        android:layout_height="317dp"
-        android:src="@drawable/bilguidelogo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/imageBilGuide"
+        android:layout_width="309dp"
+        android:layout_height="637dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bilguidewithouttype" />
+
+    <ImageView
+        android:id="@+id/imageViewAppName"
+        android:layout_width="234dp"
+        android:layout_height="320dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageBilGuide"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageBilGuide"
+        app:srcCompat="@drawable/bilguidetype" />
+
+    <TextView
+        android:id="@+id/textViewG1K"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        android:fontFamily="@font/baloo_tamma"
+        android:text="by g1K"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageBilGuide"
+        app:layout_constraintStart_toEndOf="@+id/imageBilGuide" />
 </androidx.constraintlayout.widget.ConstraintLayout>
