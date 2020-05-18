@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_place_black_24dp" />
+        app:srcCompat="@drawable/ic_place_pink_24dp" />
 
     <Spinner
         android:id="@+id/spinnerBuilding"
@@ -49,8 +49,8 @@
 
     <Button
         android:id="@+id/buttonGo"
-        android:layout_width="185dp"
-        android:layout_height="51dp"
+        android:layout_width="197dp"
+        android:layout_height="67dp"
         android:layout_marginStart="106dp"
         android:layout_marginEnd="106dp"
         android:layout_marginBottom="224dp"
@@ -65,8 +65,8 @@
 
     <Button
         android:id="@+id/buttonMainMenu"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="132dp"
         android:background="@drawable/button_shape"
