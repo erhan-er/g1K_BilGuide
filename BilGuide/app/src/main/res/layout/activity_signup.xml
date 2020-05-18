@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/signupinbg"
     tools:context=".SignUpActivity">
 
     <ImageView
@@ -12,43 +13,47 @@
         android:layout_height="128dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033"
-        app:srcCompat="@drawable/add_profile" />
+        app:layout_constraintVertical_bias="0.291"
+        app:srcCompat="@drawable/signupimage" />
 
     <EditText
         android:id="@+id/fullName"
         android:layout_width="256dp"
         android:layout_height="49dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Full Name"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.074" />
 
     <EditText
         android:id="@+id/userEmail"
         android:layout_width="256dp"
         android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/userPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullName"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintTop_toBottomOf="@+id/fullName" />
 
     <EditText
         android:id="@+id/userPassword"
         android:layout_width="256dp"
         android:layout_height="49dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="196dp"
         android:ems="10"
         android:hint="Password - min 6 character"
         android:inputType="textPassword"
@@ -56,22 +61,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userEmail"
-        app:layout_constraintVertical_bias="0.120000005" />
+        app:layout_constraintTop_toBottomOf="@+id/userEmail" />
 
     <Button
         android:id="@+id/SignUpButton2"
         android:layout_width="128dp"
         android:layout_height="64dp"
-        android:text="SIGN UP"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="108dp"
         android:background="@drawable/button_shape"
+        android:text="SIGN UP"
         android:textColor="@color/colorblue"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPassword"
-        app:layout_constraintVertical_bias="0.24000001" />
+        app:layout_constraintTop_toBottomOf="@+id/userPassword" />
 
     <ProgressBar
         android:id="@+id/progressBar"

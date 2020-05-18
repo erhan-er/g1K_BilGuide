@@ -19,15 +19,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@color/colorblue"
         android:enabled="true"
         android:text="START NAVIGATION"
         android:textColor="@color/colorWhite"
+        android:textSize="20sp"
         mapbox:layout_constraintStart_toStartOf="parent"
         mapbox:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/buttonBackMap"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -36,6 +36,7 @@
         android:background="@color/colorblue"
         android:text="BACK"
         android:textColor="@color/colorWhite"
+        android:textSize="20sp"
         mapbox:layout_constraintBottom_toBottomOf="parent"
         mapbox:layout_constraintStart_toStartOf="parent" />
 
@@ -47,6 +48,7 @@
         android:background="@color/colorblue"
         android:text="MAIN MENU"
         android:textColor="@color/colorWhite"
+        android:textSize="20sp"
         mapbox:layout_constraintBottom_toBottomOf="parent"
         mapbox:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

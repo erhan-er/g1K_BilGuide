@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorblue"
+    android:background="@drawable/background1"
     tools:context=".GameModeBalance">
 
     <TextView
@@ -12,13 +12,11 @@
         android:layout_width="365dp"
         android:layout_height="80dp"
         android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="129dp"
-        android:layout_marginRight="129dp"
         android:autoSizeTextType="uniform"
         android:text="Congratulations!"
-        android:textColor="#CDE2E3"
+        android:textColor="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,12 +25,11 @@
         android:id="@+id/textView2"
         android:layout_width="365dp"
         android:layout_height="80dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="236dp"
         android:autoSizeTextType="uniform"
         android:text="Bilcoin Earned:"
-        android:textColor="#CDE2E3"
+        android:textColor="#2196F3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -48,5 +45,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="157dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="51dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/congratsimage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
