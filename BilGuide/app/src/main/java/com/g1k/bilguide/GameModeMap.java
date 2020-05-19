@@ -7,6 +7,7 @@ import androidx.core.location.LocationManagerCompat;
 import android.content.Context;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Toast;
 
 import com.mapbox.geojson.Point;
@@ -51,8 +52,7 @@ public class GameModeMap extends AppCompatActivity implements OnMapReadyCallback
     private Button             buttonGo2;
     private String             buildingName;
     private NavigationView     navigationView;
-    private Button checkArrival;
-
+    private static final int CHECK_FREQ = 3000;
     // methods
     /**
      * This method is the default method of android studio, which applies main process for widgets.
@@ -75,13 +75,125 @@ public class GameModeMap extends AppCompatActivity implements OnMapReadyCallback
 
         // linking buttons
         buttonGo2 = findViewById(R.id.buttonGo2);
-        checkArrival = findViewById(R.id.checkArrival);
 
         // linking navigationview
         navigationView = findViewById(R.id.navigationView);
 
         // get the building name from GameModeMain class
         buildingName = getIntent().getStringExtra("answer");
+
+
+        Handler handler = new Handler();
+
+        /**
+         * handler's post delayed method provides the location to be checked every three seconds
+         */
+        handler.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                // get users last location
+                Point newLocation = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(),locationComponent.getLastKnownLocation().getLatitude());
+
+                // For building A
+                // checking the user arrived the building or not
+                if( buildingName.equals("A")) {
+                    if (newLocation.latitude() > 39.8675 && newLocation.latitude() < 39.8682 && newLocation.longitude() > 32.7492 && newLocation.longitude() < 32.7502) {
+                        // setting Go button enabled
+                        buttonGo2.setEnabled(true);
+                        // showing toast message
+                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
+                // For building B
+                // checking the user arrived the building or not
+                if( buildingName.equals("B")) {
+                    if(newLocation.latitude() > 39.8685 && newLocation.latitude() < 39.8690 && newLocation.longitude() > 32.7475 && newLocation.longitude() < 32.7485) {
+                        // setting Go button enabled
+                        buttonGo2.setEnabled(true);
+                        // showing toast message
+                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
+                // For building EA
+                // checking the user arrived the building or not
+                if( buildingName.equals("EA")) {
+                    if (newLocation.latitude() > 39.8708 && newLocation.latitude() < 39.8715 && newLocation.longitude() > 32.7497 && newLocation.longitude() < 32.7504) {
+                        // setting Go button enabled
+                        buttonGo2.setEnabled(true);
+                        // showing toast message
+                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
+                // For building EE
+                // checking the user arrived the building or not
+                if( buildingName.equals("EE")) {
+                    if(newLocation.latitude() > 39.8719 && newLocation.latitude() < 39.8722 && newLocation.longitude() > 32.7504 && newLocation.longitude() < 32.7510) {
+                        // setting Go button enabled
+                        buttonGo2.setEnabled(true);
+                        // showing toast message
+                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
+                // For building FF
+                // checking the user arrived the building or not
+                if( buildingName.equals("FF")) {
+                    if(newLocation.latitude() > 39.8655 && newLocation.latitude() < 39.8665 && newLocation.longitude() > 32.7485 && newLocation.longitude() < 32.7495) {
+                        // setting Go button enabled
+                        buttonGo2.setEnabled(true);
+                        // showing toast message
+                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
+                // For building G
+                // checking the user arrived the building or not
+                if( buildingName.equals("G")) {
+                    if(newLocation.latitude() > 39.8682 && newLocation.latitude() < 39.8689 && newLocation.longitude() > 32.7494 && newLocation.longitude() < 32.7504) {
+                        // setting Go button enabled
+                        buttonGo2.setEnabled(true);
+                        // showing toast message
+                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
+                // For building SA
+                // checking the user arrived the building or not
+                if( buildingName.equals("SA")) {
+                    if(newLocation.latitude() > 39.8675 && newLocation.latitude() < 39.8680 && newLocation.longitude() > 32.7480 && newLocation.longitude() < 32.7485) {
+                        // setting Go button enabled
+                        buttonGo2.setEnabled(true);
+                        // showing toast message
+                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
+                // For building V
+                // checking the user arrived the building or not
+                if( buildingName.equals("V")) {
+                    if(newLocation.latitude() > 39.8668 && newLocation.latitude() < 39.8673 && newLocation.longitude() > 32.7496 && newLocation.longitude() < 32.7505) {
+                        // setting Go button enabled
+                        buttonGo2.setEnabled(true);
+                        // showing toast message
+                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
+                handler.postDelayed(this,CHECK_FREQ);
+            }
+        }, CHECK_FREQ);
 
         // When the button go was pressed, this method works
         buttonGo2.setOnClickListener(new View.OnClickListener() {
@@ -97,153 +209,6 @@ public class GameModeMap extends AppCompatActivity implements OnMapReadyCallback
                 startActivity(intent2);
             }
         });
-
-        // When the button checkArrival was pressed, this method works
-        checkArrival.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // get users last location
-                Point newLocation = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(),locationComponent.getLastKnownLocation().getLatitude());
-
-                // For building A
-                // checking the user arrived the building or not
-                if( buildingName.equals("A")) {
-                    if (newLocation.latitude() > 39.8675 && newLocation.latitude() < 39.8682 && newLocation.longitude() > 32.7492 && newLocation.longitude() < 32.7502) {
-                        // setting Go button enabled
-                        buttonGo2.setEnabled(true);
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You haven't arrived yet", Toast.LENGTH_SHORT).show();
-                        // setting Go button disabled
-                        buttonGo2.setEnabled(false);
-                    }
-                }
-
-                // For building B
-                // checking the user arrived the building or not
-                if( buildingName.equals("B")) {
-                    if(newLocation.latitude() > 39.8685 && newLocation.latitude() < 39.8690 && newLocation.longitude() > 32.7475 && newLocation.longitude() < 32.7485) {
-                        // setting Go button enabled
-                        buttonGo2.setEnabled(true);
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You haven't arrived yet", Toast.LENGTH_SHORT).show();
-                        // setting Go button disabled
-                        buttonGo2.setEnabled(false);
-                    }
-                }
-
-                // For building EA
-                // checking the user arrived the building or not
-                if( buildingName.equals("EA")) {
-                    if (newLocation.latitude() > 39.8708 && newLocation.latitude() < 39.8715 && newLocation.longitude() > 32.7497 && newLocation.longitude() < 32.7504) {
-                        // setting Go button enabled
-                        buttonGo2.setEnabled(true);
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You haven't arrived yet", Toast.LENGTH_SHORT).show();
-                        // setting Go button disabled
-                        buttonGo2.setEnabled(false);
-                    }
-                }
-
-                // For building EE
-                // checking the user arrived the building or not
-                if( buildingName.equals("EE")) {
-                    if(newLocation.latitude() > 39.8719 && newLocation.latitude() < 39.8722 && newLocation.longitude() > 32.7504 && newLocation.longitude() < 32.7510) {
-                        // setting Go button enabled
-                        buttonGo2.setEnabled(true);
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You haven't arrived yet", Toast.LENGTH_SHORT).show();
-                        // setting Go button disabled
-                        buttonGo2.setEnabled(false);
-                    }
-                }
-
-                // For building FF
-                // checking the user arrived the building or not
-                if( buildingName.equals("FF")) {
-                    if(newLocation.latitude() > 39.8655 && newLocation.latitude() < 39.8665 && newLocation.longitude() > 32.7485 && newLocation.longitude() < 32.7495) {
-                        // setting Go button enabled
-                        buttonGo2.setEnabled(true);
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You haven't arrived yet", Toast.LENGTH_SHORT).show();
-                        // setting Go button disabled
-                        buttonGo2.setEnabled(false);
-                    }
-                }
-
-                // For building G
-                // checking the user arrived the building or not
-                if( buildingName.equals("G")) {
-                    if(newLocation.latitude() > 39.8682 && newLocation.latitude() < 39.8689 && newLocation.longitude() > 32.7494 && newLocation.longitude() < 32.7504) {
-                        // setting Go button enabled
-                        buttonGo2.setEnabled(true);
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You haven't arrived yet", Toast.LENGTH_SHORT).show();
-                        // setting Go button disabled
-                        buttonGo2.setEnabled(false);
-                    }
-                }
-
-                // For building SA
-                // checking the user arrived the building or not
-                if( buildingName.equals("SA")) {
-                    if(newLocation.latitude() > 39.8675 && newLocation.latitude() < 39.8680 && newLocation.longitude() > 32.7480 && newLocation.longitude() < 32.7485) {
-                        // setting Go button enabled
-                        buttonGo2.setEnabled(true);
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You haven't arrived yet", Toast.LENGTH_SHORT).show();
-                        // setting Go button disabled
-                        buttonGo2.setEnabled(false);
-                    }
-                }
-
-                // For building V
-                // checking the user arrived the building or not
-                if( buildingName.equals("V")) {
-                    if(newLocation.latitude() > 39.8668 && newLocation.latitude() < 39.8673 && newLocation.longitude() > 32.7496 && newLocation.longitude() < 32.7505) {
-                        // setting Go button enabled
-                        buttonGo2.setEnabled(true);
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You have arrived! Discover the building!", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        // showing toast message
-                        Toast.makeText(GameModeMap.this, "You haven't arrived yet", Toast.LENGTH_SHORT).show();
-                        // setting Go button disabled
-                        buttonGo2.setEnabled(false);
-                    }
-                }
-            }
-        });
-        // set Go button disabled
-        buttonGo2.setEnabled(false);
     }
 
     /**
@@ -338,7 +303,6 @@ public class GameModeMap extends AppCompatActivity implements OnMapReadyCallback
 
         // adding icon layers for choosen building
         if ( source != null ) {
-            Toast.makeText(this, "Please click check arrival button when you arrive the building.", Toast.LENGTH_LONG).show();
             // For building A
             if (buildingName.equals("A")) {
                 source.setGeoJson(Feature.fromGeometry(Point.fromLngLat(32.749340, 39.868065)));

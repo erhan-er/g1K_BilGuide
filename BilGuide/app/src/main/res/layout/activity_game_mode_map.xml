@@ -26,29 +26,16 @@
 
     <Button
         android:id="@+id/buttonGo2"
-        android:layout_width="411dp"
-        android:layout_height="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
         android:backgroundTint="#E6656B"
+        android:enabled="false"
         android:text="DISCOVER THE BUILDING"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/checkArrival"
-        android:layout_width="408dp"
-        android:layout_height="55dp"
-        android:backgroundTint="@color/colorblue"
-        android:text="CHECK ARRIVAL"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonGo2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/mapView"
         app:layout_constraintStart_toStartOf="parent" />
 
 
