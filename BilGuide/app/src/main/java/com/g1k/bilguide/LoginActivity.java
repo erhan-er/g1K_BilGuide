@@ -122,7 +122,13 @@ public class LoginActivity extends AppCompatActivity {
             startActivity( new Intent( LoginActivity.this, MainMenuActivity.class ));
         }
         else {
-            Toast.makeText( this, "Verify your email", Toast.LENGTH_SHORT).show();
+            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if ( task.isSuccessful() )
+                        Toast.makeText( LoginActivity.this, "Verify your email", Toast.LENGTH_SHORT).show();
+                }
+            });
             mAuth.signOut();
         }
     }
