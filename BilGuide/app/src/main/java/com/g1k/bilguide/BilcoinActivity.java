@@ -100,7 +100,7 @@ public class BilcoinActivity extends AppCompatActivity {
 
                 //show balance
                 assert user != null;
-                textViewBilcoinBalance.setText( "Your balance: " + user.getBilcoin() );
+                textViewBilcoinBalance.setText( user.getBilcoin() + " BilCoins" );
 
 
                 if( user.getBilcoin() < 50) {
