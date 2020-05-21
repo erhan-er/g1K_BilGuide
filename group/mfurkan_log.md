@@ -24,7 +24,7 @@ This week I had a meeting with my subgroup members (Furkan Turunç and Recep Uys
 This week I have learned how to use Mapbox in Android Studio and how to get and show the current location of the user in a map activity in an android application. Also, I have learned how to put a location mark in a specific place using latitudes and longitudes of the location. Therefore, we prepared (with Furkan turunç and Recep Uysal) the second screen and we almost finished it, just a few editings we will be doing. Additionally, we have finished the fourth screen where we inform the user how much BilCoins he earned.
 
 ### ~ 7 May 2020 ~
-This week with my subgroup members(Furkan Turunç and Recep Uysal) I finished game mode. We fixed some little problems about the arrival to the destination point. Also we started to combine all the subgroups' parts and except some little problems and details, we finished our android mobile application.
+This week with my subgroup members(Furkan Turunç and Recep Uysal) I finished game mode. We fixed some little problems about the arrival to the destination point. Also we started to combine all the subgroups' parts and except some little problems and details, we almost finished our android mobile application.
 
 
 ***
