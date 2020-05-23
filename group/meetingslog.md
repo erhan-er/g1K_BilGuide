@@ -49,4 +49,20 @@ In this meeting, three groups which are Entrance Page, Game Mode and Info Mode s
 In this meeting, we held an immediate meeting via zoom to solve the issue of removing sample question about a building, answered in game mode from database system in order to pretend the user from solving the same question again and again. After solving this problem, we made Bilcoin activity so that the user can spend his/her Bilcoins in cafees on campus by selecting particular food or drink according to how much Bilcoin he/she has. After each selection, the balance is decreased accordingly along with viewed through firebase system.
 
 ****
+
+### Meeting ~ (15.05.2020, 1 hrs)
+****
+**Present:** Everyone
+
+In this meeting, we dealt with arranging location permission in order to make the user open location services when s/he enters the application.
+
+****
+
+### Meeting ~ (19.05.2020, 1 hrs)
+****
+**Present:** Everyone
+
+In this meeting, we first divided our project into pieces to introduce them in the video. Then, we together recorded a video where each group member introduces themselves and the application is also introduced briefly. After that, individually, each group member recorded one or two video(s) about where s/he is responsible for and then those videos are combined and uploaded to YouTube.
+
+****
 ****
