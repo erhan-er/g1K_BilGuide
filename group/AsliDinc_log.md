@@ -20,4 +20,7 @@ This week we created a simple select building interface and tried to use Google 
 ### ~ 27.04.2020 ~
 This week we completed our map activity by using Mapbox SDK. We linked the select building screen to the map navigation screen and successfully pass data from one activity to another. I am now trying to learn how to create an aesthetic and user friendly user interface with Adobe Xd in order to make our application also pleasing to the eye.
 
+### ~ 18.05.2020 ~
+This week I edited the user interface design of our application.
+
 ****
