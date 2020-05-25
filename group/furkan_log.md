@@ -26,4 +26,8 @@ In this meeting, we as the group of game mode faced a problem, which is if the u
 ### ~06.05.2020 ~
 We as the game mode group arranged some details in the code and we tested final version of game mode. It has worked properly so we have uploaded the codes to github so that we can merge all codes with the codes of other groups. Finally, we held an meeting via zoom and we have combined all codes.
 
+### ~18.05.2020 ~
+In this week, we arranged location permission in a way that it appears as a dialog in the first page on screen. In addition, we prepared our project demo video. I personally prepared screen recorder of all pages, and then I and my friends took video frame of the pages by cutting what frames everyone in the group personally is responsible for. Finally, each member in the group demonstrated what he/she did in a video and we combined all personal videos.
+
+
 ****
