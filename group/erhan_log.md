@@ -21,5 +21,5 @@ This week I learn how to use Google Firebase appropriately in an app and worked 
 Finally, we finished the project. This week, all groups came together and combined all of the parts. I and berk integrated the game mode and bilcoin activity part to the database. We encountered with some minor problems, but we solved them.
 
 ### ~ 11.05.2020 ~
-This week we tested the project's functions. We detected some issues. For example, when the user log in, at the first time he pesss the infomode's go button, program is not working. I tried to solve it. UPDATE: We solved everything on our project. Now, it is completely working.
+This week we tested the project's functions. We detected some issues. For example, when the user log in, at the first time he press the infomode's go button, program is not working. I tried to solve it. UPDATE: We solved everything on our project. Now, it is completely working.
 ****
