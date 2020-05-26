@@ -14,7 +14,7 @@ BilGuide is an android based application that provides Bilkent University member
 + **Requirements:** completed (07.03.2020)
 + **UI Design:** completed (23.03.2020)
 + **Detailed Design:** completed (28.04.2020)
-+ **Implementation:** in progress
++ **Implementation:** completed
 + **Reflections:** not yet!
 
 [Group Meetings Log](group/meetingslog.md)
