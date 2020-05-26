@@ -17,3 +17,6 @@ This week erhan and I make a metting at zoom and we tried to make our parts. We 
 
 ### ~ 04.05.2020 ~
 Finally, we finished the project. This week, all groups came together and combined all of the parts. Erhan and I integrated the game mode and bilcoin activity part to the database. We encountered with some minor problems, but we solved them.
+
+### ~ 11.05.2020 ~
+This week we tested the project's functions. We detected some issues. For example, when the user log in, at the first time he pesss the infomode's go button, program is not working. UPDATE: We solved everything on our project. Now, it is completely working.
