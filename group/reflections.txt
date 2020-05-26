@@ -1,0 +1,11 @@
+REFLECTIONS
+
+We learned how to design an android application, its design, and structure.
+In addition, we have learned authentication and data storage via firebase, and maps via MapBox SDK. 
+This project also improved our java knowledge because we learned a lot of new classes and methods. 
+Therefore, BilGuide contributes to our programming and designing skills in a considerable extent.
+Meeting via Zoom for working on the project was difficult. We would try to add Event Mode
+If we had a chance to meet the university cafes face to face, we could have a deal for BilCoin activity
+We spent almost 2 months. 
+We had some difficulties because of current situation, but we managed to do a group work. We are very proud of our work. 
+
