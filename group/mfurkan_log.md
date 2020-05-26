@@ -26,5 +26,7 @@ This week I have learned how to use Mapbox in Android Studio and how to get and 
 ### ~ 7 May 2020 ~
 This week with my subgroup members(Furkan Turunç and Recep Uysal) I finished game mode. We fixed some little problems about the arrival to the destination point. Also we started to combine all the subgroups' parts and except some little problems and details, we almost finished our android mobile application.
 
+### ~ 18 May 2020 ~
+This week, as the whole group, we recorded a video in order to introduce our moblie android application. Then, we recorded individual videos to introduce our application in detail. I introduced our game mode's main menu and balance parts. After all individual videos are recorded, we combined them and uploaded to YouTube.
 
 ***
