@@ -25,7 +25,7 @@ Also, I started to design our application's logo and icons.
 This week we did a meeting in order to we merged three parts. It was hard because even java files are different from each other; gradle,res and manifest files have the same name and merging these was not so easy. Also, I designed and added splash screen, which is screen that appears 3 seconds when the user enters the app, with my friends. In addition, I implemented the screen that counts from 3 before starting the game mode. Now, there are some minor bugs such what will be done when back pressed etc. Me and all group will try to solve them. UPDATE: Most of issues were solved.
 
 ### ~ 11.05.2020 ~
-This week we tested the project's functions. We detected some issues. For example, when the user log in, at the first time he pesss the infomode's go button, program is not working. I tried to solve it. UPDATE: We solved everything on our project. Now, it is completely working.
+This week we tested the project's functions. We detected some issues. For example, when the user log in, at the first time he press the infomode's go button, program is not working. I tried to solve it. UPDATE: We solved everything on our project. Now, it is completely working.
 
 ### ~ 18.05.2020 ~
  This week, I finished designing the logo and icon, with my friends' opinions. I finalized it and added to the our application. We made the project demo video, and second version of detailed design report.
